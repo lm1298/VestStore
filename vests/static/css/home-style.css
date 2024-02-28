@@ -1,0 +1,29 @@
+body {
+    font-family: Alegreya;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url('../images/vest.jpg');
+    background-size: cover; /* Fit the entire image within the background */
+    background-repeat: no-repeat;
+}
+header {
+    font-family: Alegreya;
+    background-color: #474E5D;
+    padding: 2px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+h1 {
+    color: white;
+}
+h2 {
+    color: white;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
