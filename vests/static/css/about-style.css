@@ -7,12 +7,12 @@ body {
     text-align: center;
 }
 header {
-    background-color: #474e5d; /* Set header background color to black */
+    background-color: #474e5d; 
     padding: 2px;
     height: 70px;
     font-family: Alegreya;
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Items are spaced evenly along the main axis */
+    display: flex; 
+    justify-content: space-between; 
     align-items: center;
     color:white;
     font-size: 15px;
