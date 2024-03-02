@@ -31,7 +31,7 @@
     <br>
 
     <div class="container">
-        <img src="https://www.25mphvest.com/singlevest.jpg" alt="Placeholder Image"> <!-- Sample image, replace with your image source -->
+        <img src="https://www.25mphvest.com/singlevest.jpg" alt="Placeholder Image"> 
         <div class="info">
             <h2 style="color: black; margin-top: 20px;">25mph Vests</h2>
             <p style="font-size: 15px;"><i>Stay safe and visible with our vests.</i></p>
@@ -89,6 +89,45 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sizesSelect = document.getElementById("sizes");
+            const quantitySelect = document.getElementById("quantity");
+    
+            // Function to fetch quantities based on selected size
+            const fetchQuantities = function () {
+                const selectedSize = sizesSelect.value;
+    
+                // Fetch quantities for the selected size
+                fetch(`/get_quantities/?size=${selectedSize}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Clear existing options
+                        quantitySelect.innerHTML = "";
+    
+                        // Populate quantity options from 1 to available quantity
+                        for (let i = 1; i <= data; i++) {
+                            const option = document.createElement("option");
+                            option.value = i;
+                            option.text = i;
+                            quantitySelect.appendChild(option);
+                        }
+    
+                        // Refresh the selectpicker to update its appearance
+                        $(quantitySelect).selectpicker('refresh');
+                    })
+                    .catch(error => {
+                        console.error("Error fetching quantities:", error);
+                    });
+            };
+    
+            fetchQuantities();
+            
+            sizesSelect.addEventListener("change", fetchQuantities);
+        });
+
+    </script>
 
 </body>
 
