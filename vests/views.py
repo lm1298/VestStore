@@ -5,11 +5,14 @@ from django.http import JsonResponse
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
+
 def about(request):
     return render(request, 'about.html')
+
 def product(request):
     vests = Vest.objects.all()
     return render(request, 'product.html', {'vests': vests})
+
 def get_quantities(request):
     size = request.GET.get("size")
     print(size)
@@ -20,3 +23,6 @@ def get_quantities(request):
         return JsonResponse(quantities, safe=False)
     else:
         return JsonResponse({"error": "Size parameter is required"}, status=400)
+    
+def cart(request):
+    return render(request, 'cart.html')
