@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vest Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/about-styles.css' %}">
+</head>
+<header>
+    
+    <div>
+        <a href="/" style="color:white; margin-left: 110px;">Home</a>
+        <a href="{% url 'about' %}" style="color:white; margin-left: 30px;">About</a>
+    </div>
+    <div>
+        <a href="{% url 'product' %}" style="color:white; margin-right: 30px;">Products</a>     
+    </div>
+    
+</header>
+<body>
+    <img src="{% static '/images/vest.jpg' %}" alt="My Image" style="float: left; margin-top: 60px; margin-left: 120px; max-width: 30%; width: 250px; height: 250px;">
+
+    <div class="container" style="background-color: #F9F6EE;">
+        <h2 style="margin-top: 0; margin-left: 210px; margin-top: 60px; text-align: left;"><b>Know more...</b></h2>
+        <p style="font-size: 20px; margin-left: 210px; text-align: left;"><i>Our vests are designed to keep you visible and protected, whether you're cycling, scooting, or skateboarding through the city streets. 
+            They are featured in vibrant color to ensure you stand out in any lighting conditions. 
+            They are lightweight with silkscreen printed on both front and back and are available in 3 sizes for kids and adults.</i></p>
+        <p style="margin-left: 210px; text-align: left;"><i>Contact us: <b>25mphvests@infinity.com</b></i></p>
+    </div>
+</body>
+</html>

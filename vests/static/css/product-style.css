@@ -1,0 +1,61 @@
+
+body {
+    font-family: Alegreya;
+    margin: 0;
+    padding: 0;
+    background-color: #D3D3D3;
+    color: #ffffff; /* Set text color to white */
+    text-align: center;
+}
+header {
+    background-color: #474e5d; /* Set header background color to black */
+    padding: 2px;
+    height: 70px;
+    font-family: Alegreya;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Items are spaced evenly along the main axis */
+    align-items: center;
+    color:white;
+    font-size: 15px;
+}
+.container {
+    background-color: #F9F6EE; /* Set container background color to light black */
+    padding: 20px;
+    margin: 0 auto;
+    width: 40%; /* Adjust container width as needed */
+    text-align: center; /* Align text to left within container */
+    border-radius: 10px; /* Add rounded corners to container */
+    height: 350px;
+    font-family: Alegreya;
+    color: black;
+}
+.container img {
+    float: left; /* Float image to the left */
+    margin-right: 20px; /* Add margin to the right of the image */
+    max-width: 70%; /* Set maximum width for the image */
+    height: 300px;
+    font-family: Alegreya;
+}
+.size-chart-link {
+    font-size: 15px;
+    cursor: pointer;
+    color: #007bff; /* Set link color to blue */
+    text-decoration: underline; /* Underline the link */
+    margin-top: 10px;
+    font-family: Alegreya;
+}
+
+h1 {
+    color: white; /* Set heading color to white */
+    font-family: Alegreya;
+}
+h2 {
+    color: #ccc; /* Set subheading color to light gray */
+    font-family: Alegreya;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    font-family: Alegreya;
+}
