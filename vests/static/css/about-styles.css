@@ -2,19 +2,18 @@ body {
     font-family: Alegreya;
     margin: 0;
     padding: 0;
-    background-color: #F9F6EE; 
     color: black; 
     text-align: center;
 }
 header {
-    background-color: #474e5d; 
+    background-color: #232f3e; 
     padding: 2px;
     height: 70px;
     font-family: Alegreya;
     display: flex; 
     justify-content: space-between; 
     align-items: center;
-    color:white;
+    color:black;
     font-size: 15px;
 }        
 
@@ -28,4 +27,69 @@ h2 {
 img {
     max-width: 100%;
     height: auto;
+}
+.about-section {
+    display: flex;
+    align-items: center; /* This will vertically align the image and the text */
+    justify-content: space-between; /* This will put some space between the image and the text */
+    padding: 30px;
+}
+
+.about-image {
+    width: 80%; /* Adjust this value as needed */
+    max-width: 400px; /* Adjust this value as needed */
+    height: auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px rgba(0,0,0,0.1);
+}
+
+.slideshow-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.about-text {
+    flex: 1;
+    font-family: 'Arial', sans-serif; /* Change this to your preferred font */
+    font-size: 18px; /* Change this to your preferred size */
+    color: #333; /* Change this to your preferred color */
+    line-height: 1.8;
+    margin-top: 70px;
+    margin-right: 80px;
+    margin-left: 20px;
+}
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+.fade {
+  -webkit-animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
+  -moz-animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
+  -o-animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
+  animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+.about-text h1, .about-text h2, .about-text h3 {
+    color:green;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+@-webkit-keyframes fade {
+  0% {opacity: .4} 
+  100% {opacity: 1}
+}
+
+@-moz-keyframes fade {
+  0% {opacity: .4} 
+  100% {opacity: 1}
 }
