@@ -9,8 +9,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/about-styles.css' %}">
 </head>
-<header>
-    
+<header> 
     <div>
         <a href="/" style="color:white; margin-left: 110px;">Home</a>
         <a href="{% url 'about' %}" style="color:white; margin-left: 30px;">About</a>
@@ -19,17 +18,46 @@
         <a href="{% url 'product' %}" style="color:white; margin-right: 30px;">Products</a>  
         <a href="{% url 'cart' %}" style="color:white; margin-right: 110px;">Cart</a>   
     </div>
-    
 </header>
 <body>
-    <img src="{% static '/images/vest1.jpg' %}" alt="My Image" style="float: left; margin-top: 60px; margin-left: 120px; max-width: 30%; width: 250px; height: 250px;">
+    <div class="content">
+        <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="{% static '/images/vest1.jpg' %}" alt="My Image" style="float: left; margin-top: 10px; margin-left: 10px; max-width: 80%; width: 1000px; height: 500px;">
+        </div>
 
-    <div class="container" style="background-color: #F9F6EE;">
-        <h2 style="margin-top: 0; margin-left: 210px; margin-top: 60px; text-align: left;"><b>Know more...</b></h2>
-        <p style="font-size: 20px; margin-left: 210px; text-align: left;"><i>Our vests are designed to keep you visible and protected, whether you're cycling, scooting, or skateboarding through the city streets. 
-            They are featured in vibrant color to ensure you stand out in any lighting conditions. 
-            They are lightweight with silkscreen printed on both front and back and are available in 3 sizes for kids and adults.</i></p>
-        <p style="margin-left: 210px; text-align: left;"><i>Contact us: <b>25mphvests@infinity.com</b></i></p>
+        <div class="mySlides fade">
+            <img src="{% static '/images/vest-about.jpeg' %}" alt="My Image" style="float: left; margin-top: 10px; margin-left: 10px; max-width: 80%; width: 1000px; height: 500px;">
+        </div>
     </div>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+
+    <div class="about-text">
+        <h2><b>Know more about 25mph Vests...</b></h2>
+        <p>Our vests are designed to keep you visible and protected, whether you're cycling, scooting, or skateboarding through the city streets. 
+            They are featured in vibrant colors to ensure you stand out in any lighting conditions. 
+            They are lightweight with silkscreen printed on both front and back and are available in 3 sizes for kids and adults.</p>
+        <p>Our vests are made from high-quality, durable materials that can withstand the rigors of outdoor activities. They are easy to clean and maintain, making them a practical choice for everyday use.</p>
+        <p>With our wide range of designs and colors, you can find a vest that matches your style and personality. Whether you prefer a classic look or something more modern, we have a vest for you.</p>
+        <p>At 25mph Vests, we believe in the power of visibility. We are committed to providing our customers with products that enhance their safety and comfort while they enjoy their outdoor activities.</p>
+        <p>Contact us: <b>25mphvests@infinity.com</b></p>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
