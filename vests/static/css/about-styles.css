@@ -30,14 +30,14 @@ img {
 }
 .about-section {
     display: flex;
-    align-items: center; /* This will vertically align the image and the text */
-    justify-content: space-between; /* This will put some space between the image and the text */
+    align-items: center; 
+    justify-content: space-between; 
     padding: 30px;
 }
 
 .about-image {
-    width: 80%; /* Adjust this value as needed */
-    max-width: 400px; /* Adjust this value as needed */
+    width: 80%; 
+    max-width: 400px; 
     height: auto;
 }
 
@@ -56,9 +56,9 @@ img {
 
 .about-text {
     flex: 1;
-    font-family: 'Arial', sans-serif; /* Change this to your preferred font */
-    font-size: 18px; /* Change this to your preferred size */
-    color: #333; /* Change this to your preferred color */
+    font-family: 'Arial', sans-serif; 
+    font-size: 18px; 
+    color: #333; 
     line-height: 1.8;
     margin-top: 70px;
     margin-right: 80px;
