@@ -3,12 +3,14 @@ body {
     font-family: Alegreya;
     margin: 0;
     padding: 0;
-    background-color: #D3D3D3;
+    /* background-color: #D3D3D3; */
+    background-image: url('../images/product-bg2.jpg');
+    background-size: cover;
     color: #ffffff; /* Set text color to white */
     text-align: center;
 }
 header {
-    background-color: #474e5d; /* Set header background color to black */
+    background-color: #232f3e; /* Set header background color to black */
     padding: 2px;
     height: 70px;
     font-family: Alegreya;
@@ -19,7 +21,7 @@ header {
     font-size: 15px;
 }
 .container {
-    background-color: #F9F6EE; /* Set container background color to light black */
+    background-color: #edecea; /* Set container background color to light black */
     padding: 20px;
     margin: 0 auto;
     width: 40%; /* Adjust container width as needed */
