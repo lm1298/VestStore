@@ -1,4 +1,3 @@
-
 body {
     font-family: Alegreya;
     margin: 0;
@@ -9,16 +8,33 @@ body {
     color: #ffffff; /* Set text color to white */
     text-align: center;
 }
-header {
-    background-color: #232f3e; /* Set header background color to black */
-    padding: 2px;
-    height: 70px;
-    font-family: Alegreya;
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Items are spaced evenly along the main axis */
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    margin: auto; 
+    background-color: #232f3e;
+    height: 60px;
     align-items: center;
-    color:white;
-    font-size: 15px;
+    
+}
+
+.left {
+    display: flex;
+    margin-left: 7%;
+}
+
+.right {
+    display: flex;
+    margin-right: 12%;
+}   
+
+.left a {
+    margin-right: 30%; 
+}
+
+.right a {
+    margin-left: 20%; 
 }
 .container {
     background-color: #edecea; /* Set container background color to light black */
@@ -60,4 +76,42 @@ img {
     max-width: 100%;
     height: auto;
     font-family: Alegreya;
+}
+/* For tablets */
+@media (max-width: 1024px) {
+    .container {
+        width: 70%;
+        height: auto;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* For tablets */
+@media (max-width: 1024px) {
+    header {
+        padding: 10px;
+        height: auto;
+        font-size: 14px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+        height: auto;
+        font-size: 12px;
+        flex-direction: column;
+    }
 }
