@@ -108,6 +108,7 @@ img {
     header {
         padding: 10px;
         font-size: 14px;
+        height: auto;
     }
 }
 
@@ -126,7 +127,6 @@ img {
         font-size: 12px;
         height: auto;
         flex-direction: column;
-        justify-content: space-around;
     }
 
     .about-section {
