@@ -5,6 +5,7 @@ body {
     color: black; 
     text-align: center;
 }
+
 header {
     background-color: #232f3e; 
     padding: 2px;
@@ -17,32 +18,32 @@ header {
     font-size: 15px;
 }        
 
-h1 {
+h1, h2 {
     color: black; 
-}
-h2 {
-    color: black;
 }
 
 img {
     max-width: 100%;
     height: auto;
 }
+
 .about-section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center; 
     justify-content: space-between; 
     padding: 30px;
 }
 
 .about-image {
-    width: 90%; 
-    max-width: 500px; 
+    width: 100%; 
+    max-width: 400px; 
     height: auto;
 }
 
 .content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
@@ -51,33 +52,31 @@ img {
 }
 
 .slideshow-container {
-    flex: 1;
-    margin-left: 15px;
-    margin-right:2px;
+    flex: 1 1 100%;
+    margin: 20px 2px;
 }
 
 .about-text {
-    flex: 1;
+    flex: 1 1 100%;
     font-family: Alegreya; 
-    font-size: 20px; 
+    font-size: 16px; 
     color: #333; 
-    line-height: 1.8;
-    margin-top: 100px;
-    margin-right:100px;
-    margin-left:5px;
+    line-height: 1.5;
+    margin: 60px 5px;
     text-align: left;
 }
+
 .mySlides {
-  display: none;
-  padding: 90px;
-  text-align: center;
+    display: none;
+    padding: 90px;
+    text-align: center;
 }
 
 .fade {
-  -webkit-animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
-  -moz-animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
-  -o-animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
-  animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
+    -webkit-animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
+    -moz-animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
+    -o-animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
+    animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
 }
 
 .about-text h1, .about-text h2, .about-text h3 {
@@ -87,12 +86,50 @@ img {
 .about-text p {
     margin-bottom: 20px;
 }
+
 @-webkit-keyframes fade {
-  0% {opacity: .4} 
-  100% {opacity: 1}
+    0% {opacity: .4} 
+    100% {opacity: 1}
 }
 
 @-moz-keyframes fade {
-  0% {opacity: .4} 
-  100% {opacity: 1}
+    0% {opacity: .4} 
+    100% {opacity: 1}
+}
+
+/* For tablets */
+@media (max-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+
+    header {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header {
+        padding: 20px;
+        font-size: 12px;
+        flex-direction: column;
+    }
+
+    .about-section {
+        flex-direction: column-reverse;
+    }
+
+    .slideshow-container, .about-text {
+        flex: 1 1 100%;
+    }
 }
