@@ -7,16 +7,15 @@ body {
 }
 
 header {
-    background-color: #232f3e; 
+    font-family: Alegreya;
+    background-color: #474E5D;
     padding: 2px;
     height: 70px;
-    font-family: Alegreya;
-    display: flex; 
-    justify-content: space-between; 
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    color:black;
     font-size: 15px;
-}        
+}   
 
 h1, h2 {
     color: black; 
@@ -52,17 +51,20 @@ img {
 }
 
 .slideshow-container {
-    flex: 1 1 100%;
+    flex: 1;
     margin: 20px 2px;
 }
 
 .about-text {
-    flex: 1 1 100%;
+    flex: 1;
     font-family: Alegreya; 
     font-size: 16px; 
     color: #333; 
-    line-height: 1.5;
-    margin: 60px 5px;
+    line-height: 1;
+    margin: 40px 5px;
+    margin-top:100px;
+    margin-left:2px;
+    margin-right:40px;
     text-align: left;
 }
 
@@ -122,7 +124,9 @@ img {
     header {
         padding: 20px;
         font-size: 12px;
+        height: auto;
         flex-direction: column;
+        justify-content: space-around;
     }
 
     .about-section {
