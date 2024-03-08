@@ -10,18 +10,16 @@
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
     
 </head>
-<header>
-    
-    <div>
-        <a href="/" style="color:white; margin-left: 110px;">Home</a>
-        <a href="{% url 'about' %}" style="color:white; margin-left: 30px;">About</a>
+<div class="container1">
+    <div class="left">
+        <a href="/" style="color:white;">Home</a>
+        <a href="{% url 'about' %}" style="color:white;">About</a>
     </div>
-    <div>
-        <a href="{% url 'product' %}" style="color:white; margin-right: 30px;">Products</a>
-        <a href="{% url 'cart' %}" style="color:white; margin-right: 110px;">Cart</a>
+    <div class="right">
+        <a href="{% url 'product' %}" style="color:white;">Products</a>
+        <a href="{% url 'cart' %}" style="color:white;">Cart</a>
     </div>
-    
-</header>
+</div>
 <body>
     <br>
     <br>

@@ -7,15 +7,33 @@ body {
     background-size: cover;
     color: black;
 }
-header {
-    font-family: Alegreya;
-    background-color: #474E5D;
-    padding: 2px;
-    height: 70px;
+.container1 {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    background-color: #232f3e;
+    height: 60px;
     align-items: center;
-    font-size: 15px;
+
+}
+
+.left {
+    display: flex;
+    margin-left: 7%;
+}
+
+.right {
+    display: flex;
+    margin-right: 12%;
+}
+
+.left a {
+    margin-right: 30%;
+}
+
+.right a {
+    margin-left: 20%;
 }
 h1 {
     color: white;
