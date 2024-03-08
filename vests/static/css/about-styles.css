@@ -2,18 +2,19 @@ body {
     font-family: Alegreya;
     margin: 0;
     padding: 0;
-    color: black; 
+    color: black;
     text-align: center;
 }
+
 .container1 {
     display: flex;
     justify-content: space-between;
-    width: 100%; 
-    margin: auto; 
+    width: 100%;
+    margin: auto;
     background-color: #232f3e;
     height: 60px;
     align-items: center;
-    
+
 }
 
 .left {
@@ -24,18 +25,19 @@ body {
 .right {
     display: flex;
     margin-right: 12%;
-}   
+}
 
 .left a {
-    margin-right: 30%; 
+    margin-right: 30%;
 }
 
 .right a {
-    margin-left: 20%; 
-}  
+    margin-left: 20%;
+}
 
-h1, h2 {
-    color: black; 
+h1,
+h2 {
+    color: black;
 }
 
 img {
@@ -46,14 +48,14 @@ img {
 .about-section {
     display: flex;
     flex-wrap: wrap;
-    align-items: center; 
-    justify-content: space-between; 
+    align-items: center;
+    justify-content: space-between;
     padding: 30px;
 }
 
 .about-image {
-    width: 100%; 
-    max-width: 400px; 
+    width: 100%;
+    max-width: 400px;
     height: auto;
 }
 
@@ -64,7 +66,7 @@ img {
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 2px 2px 7px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
 }
 
 .slideshow-container {
@@ -74,14 +76,14 @@ img {
 
 .about-text {
     flex: 1;
-    font-family: Alegreya; 
-    font-size: 16px; 
-    color: #333; 
+    font-family: Alegreya;
+    font-size: 16px;
+    color: #333;
     line-height: 1;
     margin: 40px 5px;
-    margin-top:100px;
-    margin-left:2px;
-    margin-right:40px;
+    margin-top: 100px;
+    margin-left: 2px;
+    margin-right: 40px;
     text-align: left;
 }
 
@@ -98,8 +100,10 @@ img {
     animation: fade 2s cubic-bezier(.4, 0, .2, 1) infinite;
 }
 
-.about-text h1, .about-text h2, .about-text h3 {
-    color:green;
+.about-text h1,
+.about-text h2,
+.about-text h3 {
+    color: green;
 }
 
 .about-text p {
@@ -107,13 +111,23 @@ img {
 }
 
 @-webkit-keyframes fade {
-    0% {opacity: .4} 
-    100% {opacity: 1}
+    0% {
+        opacity: .4
+    }
+
+    100% {
+        opacity: 1
+    }
 }
 
 @-moz-keyframes fade {
-    0% {opacity: .4} 
-    100% {opacity: 1}
+    0% {
+        opacity: .4
+    }
+
+    100% {
+        opacity: 1
+    }
 }
 
 /* For tablets */
@@ -130,9 +144,9 @@ img {
 }
 
 /* For mobile phones */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .container {
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -150,7 +164,8 @@ img {
         flex-direction: column-reverse;
     }
 
-    .slideshow-container, .about-text {
+    .slideshow-container,
+    .about-text {
         flex: 1 1 100%;
     }
 }
