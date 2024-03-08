@@ -45,3 +45,30 @@ img {
     max-width: 100%;
     height: auto;
 }
+/* For tablets */
+@media (max-width: 1024px) {
+    header {
+        padding: 10px;
+        height: auto;
+        font-size: 14px;
+    }
+}
+/* For mobile phones */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+        height: auto;
+        font-size: 12px;
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    button.btn-primary {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
