@@ -72,6 +72,7 @@ img {
 .slideshow-container {
     flex: 1;
     margin: 20px 2px;
+    width: 100%
 }
 
 .about-text {
@@ -85,6 +86,7 @@ img {
     margin-left: 2px;
     margin-right: 40px;
     text-align: left;
+    width:100%
 }
 
 .mySlides {
@@ -144,7 +146,7 @@ img {
 }
 
 /* For mobile phones */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .container {
         width: 100%;
         display: flex;
@@ -161,7 +163,7 @@ img {
     }
 
     .about-section {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .slideshow-container,
@@ -170,7 +172,8 @@ img {
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
+        text-align: center; 
+        width:100%; 
     }
 
     .slideshow-container {
