@@ -147,6 +147,16 @@ img {
 
 /* For mobile phones */
 @media (max-width: 768px) {
+    .container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
     header {
         padding: 20px;
         height: auto;
@@ -183,8 +193,21 @@ img {
         text-align: center;
     }
 
+    .about-section {
+        flex-direction: column;
+    }
+
+    .slideshow-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .mySlides img {
+        width: 100%; 
+        height: auto;
+    }
+
     .about-text {
-        flex: 1;
         font-family: Alegreya;
         font-size: 14px;
         color: #333;
@@ -192,7 +215,8 @@ img {
         margin-top: 10px;
         margin-left: 10px;
         margin-right: 10px;
-        text-align: center;
-        width: 100%
+        align-content: baseline;
+        text-align: left;
+        width: 100%; 
     }
 }
