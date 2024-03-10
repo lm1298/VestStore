@@ -192,31 +192,4 @@ img {
         padding: 0;
         text-align: center;
     }
-
-    .about-section {
-        flex-direction: column;
-    }
-
-    .slideshow-container {
-        width: 100%;
-        margin: 0;
-    }
-
-    .mySlides img {
-        width: 100%; 
-        height: auto;
-    }
-
-    .about-text {
-        font-family: Alegreya;
-        font-size: 14px;
-        color: #333;
-        margin: 40px 5px;
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
-        align-content: baseline;
-        text-align: left;
-        width: 100%; 
-    }
 }
