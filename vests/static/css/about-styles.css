@@ -86,7 +86,7 @@ img {
     margin-left: 2px;
     margin-right: 40px;
     text-align: left;
-    width:100%
+    width: 100%
 }
 
 .mySlides {
@@ -163,9 +163,11 @@ img {
         font-size: 12px;
         flex-direction: column;
     }
+
     h1 {
         font-size: 36px;
     }
+
     h2 {
         font-size: 24px;
     }
@@ -174,12 +176,14 @@ img {
         font-size: 16px;
         padding: 10px 20px;
     }
-    .p1{
+
+    .p1 {
         font-size: 30px;
     }
-    .p2{
+
+    .p2 {
         font-size: 15px;
-        color:#474e5d;
+        color: #474e5d;
     }
 
     body {
@@ -198,7 +202,9 @@ img {
 
     .slideshow-container {
         flex: 1;
-        width: 100%
+        margin: 10px 10px;
+        width: 150%;
+        height:auto;
     }
 
     .about-text {
@@ -208,9 +214,9 @@ img {
         color: #333;
         margin: 40px 5px;
         margin-top: 100px;
-        margin-left: 2px;
-        margin-right: 40px;
-        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: left;
         width: 100%
     }
 }
