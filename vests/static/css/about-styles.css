@@ -154,6 +154,7 @@ img {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: auto;
     }
 
     header {
@@ -191,7 +192,6 @@ img {
         padding: 0;
         text-align: center;
     }
-
     .slideshow-container {
         flex: 1;
         height:auto;
