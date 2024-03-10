@@ -195,7 +195,7 @@ img {
     .slideshow-container {
         flex: 1;
         margin: 5px 2px;
-        width: 300px;
+        width: 450px;
         height: 100%;
         order: 1; 
     }
@@ -208,13 +208,23 @@ img {
         margin-left: 15px;
         margin-right: 10px;
         text-align: justify;
-        padding:50px;
+        padding:60px;
         width: 100%; 
         order: 2; 
     }
     .mySlides {
         display: none;
-        padding: 50px;
+        padding: 80px;
         text-align: center;
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
     }
 }
