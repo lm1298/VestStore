@@ -157,7 +157,7 @@ img {
 
     header {
         padding: 20px;
-        font-size: 12px;
+        font-size: 14px;
         height: auto;
         flex-direction: column;
     }
@@ -169,11 +169,16 @@ img {
     .slideshow-container,
     .about-text {
         flex: 1 1 100%;
+        font-size:16px;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center; 
+        text-align: justify; 
         width:100%; 
+    }
+    .mySlides img {
+        width: 100%; /* Make the images bigger */
+        height: auto;
     }
 
     .slideshow-container {
