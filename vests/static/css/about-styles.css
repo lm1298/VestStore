@@ -147,16 +147,6 @@ img {
 
 /* For mobile phones */
 @media (max-width: 768px) {
-    .container {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-    }
-
     header {
         padding: 20px;
         height: auto;
@@ -202,13 +192,7 @@ img {
         margin-top: 10px;
         margin-left: 10px;
         margin-right: 10px;
-        text-align: left;
+        text-align: center;
         width: 100%
-    }
-    .slideshow-container {
-        width: 400%;
-        height: auto;
-        margin: 0;
-        padding: 0;
     }
 }
