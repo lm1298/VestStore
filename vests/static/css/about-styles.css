@@ -168,8 +168,6 @@ img {
 
     .slideshow-container,
     .about-text {
-        flex: 1 1 100%;
-        font-size:16px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -184,5 +182,10 @@ img {
     .slideshow-container {
         width: 100%;
         margin: 0;
+    }
+
+    .about-text {
+        font-size:16px;
+        margin-top: 20px; 
     }
 }
