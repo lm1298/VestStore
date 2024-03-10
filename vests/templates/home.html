@@ -10,18 +10,16 @@
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
     
 </head>
-<header>
-    
-    <div>
-        <a href="/" style="color:white; margin-left: 110px;">Home</a>
-        <a href="{% url 'about' %}" style="color:white; margin-left: 30px;">About</a>
+<div class="container1">
+    <div class="left">
+        <a href="/" style="color:white;">Home</a>
+        <a href="{% url 'about' %}" style="color:white;">About</a>
     </div>
-    <div>
-        <a href="{% url 'product' %}" style="color:white; margin-right: 30px;">Products</a>
-        <a href="{% url 'cart' %}" style="color:white; margin-right: 110px;">Cart</a>
+    <div class="right">
+        <a href="{% url 'product' %}" style="color:white;">Products</a>
+        <a href="{% url 'cart' %}" style="color:white;">Cart</a>
     </div>
-    
-</header>
+</div>
 <body>
     <br>
     <br>
@@ -29,9 +27,9 @@
     <br>
     <br>
     <br>
-    <p style="font-size: 50px;"><b><i>Are you a commuter looking for safety?</i></b></p>
+    <p style="font-size: 50px;"><b><i>Are you a walker or a jogger looking for safety?</i></b></p>
     <p style="font-size: 30px; color:#474e5d;"><b><i>Look no further than our 25mph vests!!</i></b></p>
     <br>
-    <button type="button" class="btn btn-primary" style="background-color: #73C2FC; color: #FFFFFF;"><a href="{% url 'product' %}" style="color:inherit; text-decoration: none;">Shop now</a></button>
+    <button type="button" class="btn btn-primary" style="background-color: black; color: #FFFFFF;"><a href="{% url 'product' %}" style="color:inherit; text-decoration: none;">Shop now</a></button>
 </body>
 </html>
