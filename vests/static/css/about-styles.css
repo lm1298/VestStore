@@ -206,8 +206,8 @@ img {
         width: 100%
     }
     .slideshow-container {
-        width: 100%;
-        height: 100%;
+        width: 400%;
+        height: auto;
         margin: 0;
         padding: 0;
     }
