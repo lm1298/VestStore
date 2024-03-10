@@ -190,12 +190,12 @@ img {
         font-family: Alegreya;
         margin: 0;
         padding: 0;
-        text-align: center;
+        text-align: justify;
     }
     .slideshow-container {
         flex: 1;
         margin: 5px 2px;
-        width: 450px;
+        width: 400px;
         height: 100%;
         order: 1; 
     }
@@ -205,17 +205,17 @@ img {
         color: #333;
         margin: 40px 5px;
         margin-top: 10px;
-        margin-left: 15px;
+        margin-left: 10px;
         margin-right: 10px;
         text-align: justify;
-        padding:60px;
+        padding:30px;
         width: 100%; 
         order: 2; 
     }
     .mySlides {
         display: none;
-        padding: 80px;
-        text-align: center;
+        padding: 40px;
+        text-align: justify;
     }
     .content {
         display: flex;
@@ -224,7 +224,7 @@ img {
         justify-content: space-between;
         align-items: center;
         background-color: #fff;
-        border-radius: 5px;
+        border-radius: 2px;
         box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
     }
 }
