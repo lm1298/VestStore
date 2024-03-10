@@ -11,18 +11,18 @@
     <link rel="stylesheet" href="{% static 'css/about-styles.css' %}">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<header>
-    <div class="container1">
-        <div class="left">
-            <a href="/" style="color:white;">Home</a>
-            <a href="{% url 'about' %}" style="color:white;">About</a>
-        </div>
-        <div class="right">
-            <a href="{% url 'product' %}" style="color:white;">Products</a>
-            <a href="{% url 'cart' %}" style="color:white;">Cart</a>
-        </div>
+
+<div class="container1">
+    <div class="left">
+        <a href="/" style="color:white;">Home</a>
+        <a href="{% url 'about' %}" style="color:white;">About</a>
     </div>
-</header>
+    <div class="right">
+        <a href="{% url 'product' %}" style="color:white;">Products</a>
+        <a href="{% url 'cart' %}" style="color:white;">Cart</a>
+    </div>
+</div>
+
 
 <body>
     <div class="content">
