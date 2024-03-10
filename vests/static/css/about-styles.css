@@ -154,6 +154,7 @@ img {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: auto;
     }
 
     header {
@@ -191,8 +192,7 @@ img {
         padding: 0;
         text-align: center;
     }
-
-    .about-section {
+  .about-section {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
