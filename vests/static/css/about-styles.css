@@ -148,7 +148,8 @@ img {
 /* For mobile phones */
 @media (max-width: 768px) {
     .container {
-        width: 100%;
+        width: 90%;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -157,35 +158,37 @@ img {
 
     header {
         padding: 20px;
-        font-size: 14px;
+        font-size: 12px;
         height: auto;
         flex-direction: column;
     }
 
-    .about-section {
-        flex-direction: column;
+    h1 {
+        font-size: 36px;
     }
 
-    .slideshow-container,
-    .about-text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: justify; 
-        width:100%; 
-    }
-    .mySlides img {
-        width: 100%; 
-        height: auto;
+    h2 {
+        font-size: 24px;
     }
 
-    .slideshow-container {
-        width: 100%;
+    button.btn-primary {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .p1 {
+        font-size: 30px;
+    }
+
+    .p2 {
+        font-size: 15px;
+        color: #474e5d;
+    }
+
+    body {
+        font-family: Alegreya;
         margin: 0;
-    }
-
-    .about-text {
-        font-size:16px;
-        margin-top: 20px; 
+        padding: 0;
+        text-align: center;
     }
 }
