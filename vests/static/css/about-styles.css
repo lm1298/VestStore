@@ -86,7 +86,7 @@ img {
     margin-left: 2px;
     margin-right: 40px;
     text-align: left;
-    width:100%
+    width: 100%
 }
 
 .mySlides {
@@ -162,9 +162,11 @@ img {
         font-size: 12px;
         flex-direction: column;
     }
+
     h1 {
         font-size: 36px;
     }
+
     h2 {
         font-size: 24px;
     }
@@ -173,12 +175,14 @@ img {
         font-size: 16px;
         padding: 10px 20px;
     }
-    .p1{
+
+    .p1 {
         font-size: 30px;
     }
-    .p2{
+
+    .p2 {
         font-size: 15px;
-        color:#474e5d;
+        color: #474e5d;
     }
 
     body {
@@ -186,5 +190,31 @@ img {
         margin: 0;
         padding: 0;
         text-align: center;
+    }
+
+    .about-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px;
+    }
+
+    .slideshow-container {
+        flex: 1;
+        width: 100%
+    }
+
+    .about-text {
+        flex: 1;
+        font-family: Alegreya;
+        font-size: 14px;
+        color: #333;
+        margin: 40px 5px;
+        margin-top: 100px;
+        margin-left: 2px;
+        margin-right: 40px;
+        text-align: center;
+        width: 100%
     }
 }
