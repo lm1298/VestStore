@@ -148,7 +148,7 @@ img {
 /* For mobile phones */
 @media (max-width: 768px) {
     .container {
-        width: 90%;
+        width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
