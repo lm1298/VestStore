@@ -177,7 +177,7 @@ img {
         width:100%; 
     }
     .mySlides img {
-        width: 100%; /* Make the images bigger */
+        width: 100%; 
         height: auto;
     }
 
