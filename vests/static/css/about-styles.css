@@ -202,7 +202,9 @@ img {
 
     .slideshow-container {
         flex: 1;
-        width: 100%
+        margin: 10px 10px;
+        width: 150%;
+        height:auto;
     }
 
     .about-text {
@@ -212,9 +214,9 @@ img {
         color: #333;
         margin: 40px 5px;
         margin-top: 100px;
-        margin-left: 2px;
-        margin-right: 40px;
-        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: left;
         width: 100%
     }
 }
