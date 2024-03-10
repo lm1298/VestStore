@@ -205,9 +205,10 @@ img {
         text-align: left;
         width: 100%
     }
-    .about-image {
+    .slideshow-container {
         width: 100%;
-        max-width: 100%;
-        height: auto;
+        height: 100%;
+        margin: 0;
+        padding: 0;
     }
 }
