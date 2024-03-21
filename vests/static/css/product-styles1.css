@@ -205,7 +205,7 @@ img {
 }
 .add-to-cart {
     border-radius: 20px; 
-    margin-right: 20px;
+    margin-left: 2px;
     z-index: 10;
 }
 .add-to-cart:hover {
@@ -236,4 +236,8 @@ img {
     justify-content: center;
     height: 60px; 
     z-index: 0;
+}
+
+.main-content {
+    padding-bottom: 40px; 
 }
