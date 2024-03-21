@@ -18,7 +18,8 @@ body {
     background-color: #424041;
     height: 60px;
     align-items: center;
-    padding: 0 20px;
+    padding-right: 0;
+    margin-right: 0;
 }
 
 .left {
@@ -205,6 +206,8 @@ img {
 }
 .add-to-cart {
     border-radius: 20px; 
+    margin-right: 20px;
+    z-index: 1;
 }
 .add-to-cart:hover {
     background-color: #8bc734; 
@@ -233,14 +236,5 @@ img {
     align-items: center;
     justify-content: center;
     height: 60px; 
-    z-index: 9999;
-}
-
-/* Adjustments for the "ADD TO CART" button on mobile phones */
-@media (max-width: 768px) {
-    .add-to-cart {
-        margin-left: 20px; 
-        margin-right: 20px; 
-        width: calc(100% - 40px); 
-    }
+    z-index: 0;
 }
