@@ -11,8 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="{% static 'css/product-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product-styles1.css' %}">
 </head>
+<body style="background-color: #ffffff;">
 
 <div class="container1">
     <div class="left">
@@ -25,114 +26,298 @@
     </div>
 </div>
 
-<body>
-    <br>
-    <br>
-    <br>
-    <main>
-        <div class="container">
-            <img src="{% static '/images/vest.png' %}" alt="Placeholder Image" class="img-fluid"> 
-            <div class="info">
-                <h2 style="color: black; margin-top: 20px;"><b>25mph Vests</b></h2>
-                <p style="font-size: 15px;"><i>Stay safe and visible with our vests.</i></p>
-                <p style="font-size: 20px;">$19.99</p>
-                <div>
-                    <label for="sizes" style="margin-right: 10px;">Size</label>
-                    <select name="sizes" id="sizes" style="margin-right: 30px;">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                    </select>
-                    <label for="quantity" style="margin-right: 10px;">Quantity</label>
-                    <select name="quantity" id="quantity" style="margin-right: 20px;" data-live-search="true">
-                    </select>
-                </div>
-                <br>
-                <a href="#" class="size-chart-link" data-toggle="modal" data-target="#sizeChartModal">Size Chart</a>
-                <br>
-                <br>
-
-                <button type="button" class="btn btn-primary" style="background-color: #146080; color: #ffffff;">Add to Cart</button>
+<main class="container-fluid">
+    <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="image-container">
+                <button class="prev-btn">&#10094;</button>
+                <img src="{% static '/images/product-1.png' %}" alt="Placeholder Image" class="img-fluid current-img"> 
+                <button class="next-btn">&#10095;</button>
             </div>
         </div>
-    </main>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <!-- Product details -->
+            <div class="product-details">
+                <!-- Your product details content here -->
+                <h3 style="color: #6aad06; margin-top: 20px;"><b>25mph Vests</b></h3>
+                <p class = "description">Stay safe and visible in high-speed environments with our 25mph High-Visibility Vest. Built with durable materials and adjustable straps for a secure fit, ensures you're easily seen even in low-light conditions. Ideal for construction workers, road crew members, or cyclists, invest in your safety today.</p>
+                
+                <p style="color:#6aad06; font-size: 18px; font-weight: 600;">$19.99</p>
+                <div id="size-buttons">
+                    <label for="sizes" style="margin-right: 10px; font-weight: 300;">Size</label>
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                </div>
+                <br>
+                <div id="quantity-selector">
+                    <label for="quantity" style="margin-right: 10px; font-weight: 300;">Quantity</label>
+                    <button id="decrease-quantity" class="quantity-btn">-</button>
+                    <span id="quantity-display" class="quantity-display">1</span>
+                    <button id="increase-quantity" class="quantity-btn">+</button>
+                </div>
+                
+                <br>
+                <a href="#" class="size-chart-link" data-toggle="modal" data-target="#sizeChartModal">View Size Chart</a>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary add-to-cart" style="background-color: black; border-color: black; color: #8bc734; width: 400px;">ADD TO CART</button>
 
-    <div class="modal fade" id="sizeChartModal" tabindex="-1" role="dialog" aria-labelledby="sizeChartModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="sizeChartModalLabel" style="color: black; font-size: 20px;">Size Chart</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-dark" id="sizeChartTable" style="color:white; font-size: 12px;">
-                        <tr>
-                            <th>Size</th>
-                            <th>Height (in)</th>
-                            <th>Width (in)</th>
-                        </tr>
-                        <tr>
-                            <td>S</td>
-                            <td>22</td>
-                            <td>13</td>
-                        </tr>
-                        <tr>
-                            <td>M</td>
-                            <td>25</td>
-                            <td>16.5</td>
-                        </tr>
-                        <tr>
-                            <td>L</td>
-                            <td>27</td>
-                            <td>18</td>
-                        </tr>
-                    </table>
-                </div>
             </div>
         </div>
     </div>
+</main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const sizesSelect = document.getElementById("sizes");
-            const quantitySelect = document.getElementById("quantity");
+<div class="modal fade" id="sizeChartModal" tabindex="-1" role="dialog" aria-labelledby="sizeChartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sizeChartModalLabel" style="color: black; font-size: 20px;">Size Chart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label for="unitToggle">Size in:</label>
+                <button id="inchesBtn" class="unit-toggle active" data-unit="in">in</button>
+                <button id="centimetersBtn" class="unit-toggle" data-unit="cm">cm</button>
+                <br><br>
+                <table class="table table-dark inch-table" id="sizeChartTable" style="color:white; font-size: 12px; text-align: center;">
+                    <tr>
+                        <th>Size</th>
+                        <th>Height</th>
+                        <th>Width</th>
+                    </tr>
+                    <tr>
+                        <td>S</td>
+                        <td>22</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>25</td>
+                        <td>16.5</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>27</td>
+                        <td>18</td>
+                    </tr>
+                </table>
+
+                <table class="table table-dark cm-table" style="color:white; font-size: 12px; text-align: center;">
+                    <tr>
+                        <th>Size</th>
+                        <th>Height</th>
+                        <th>Width</th>
+                    </tr>
+                    <tr>
+                        <td>S</td>
+                        <td>55.88</td>
+                        <td>33.02</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>63.5</td>
+                        <td>41.91</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>68.58</td>
+                        <td>45.72</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="padding-left: 0;">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="footer" style="background-color: #424041; text-align: center; position: fixed; bottom: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 40px;">
+                <p style="color: white; font-size: 15px; font-family: Arial, Helvetica, sans-serif; margin-top: 10px;">Contact us: <b>25mphvests@infinity.com</b></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript code for handling unit toggle
+    document.addEventListener("DOMContentLoaded", function () {
+        var inchesBtn = document.getElementById("inchesBtn");
+        var centimetersBtn = document.getElementById("centimetersBtn");
+        var inchTable = document.querySelector(".inch-table");
+        var cmTable = document.querySelector(".cm-table");
+        var selectedUnit = "in"; // Default unit is inches
     
-            // Function to fetch quantities based on selected size
-            const fetchQuantities = function () {
-                const selectedSize = sizesSelect.value;
+        // Function to update button classes and table visibility
+        function updateUnit(unit) {
+            if (unit === "in") {
+                inchesBtn.classList.add("active");
+                centimetersBtn.classList.remove("active");
+                inchTable.style.display = "table";
+                cmTable.style.display = "none";
+            } else {
+                centimetersBtn.classList.add("active");
+                inchesBtn.classList.remove("active");
+                cmTable.style.display = "table";
+                inchTable.style.display = "none";
+            }
+        }
     
-                // Fetch quantities for the selected size
-                fetch(`/get_quantities/?size=${selectedSize}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        // Clear existing options
-                        quantitySelect.innerHTML = "";
-    
-                        // Populate quantity options from 1 to available quantity
-                        for (let i = 1; i <= data; i++) {
-                            const option = document.createElement("option");
-                            option.value = i;
-                            option.text = i;
-                            quantitySelect.appendChild(option);
-                        }
-    
-                        // Refresh the selectpicker to update its appearance
-                        $(quantitySelect).selectpicker('refresh');
-                    })
-                    .catch(error => {
-                        console.error("Error fetching quantities:", error);
-                    });
-            };
-    
-            fetchQuantities();
-            
-            sizesSelect.addEventListener("change", fetchQuantities);
+        // Add event listener for inches button
+        inchesBtn.addEventListener("click", function () {
+            selectedUnit = "in";
+            updateUnit(selectedUnit);
         });
+    
+        // Add event listener for centimeters button
+        centimetersBtn.addEventListener("click", function () {
+            selectedUnit = "cm";
+            updateUnit(selectedUnit);
+        });
+    
+        // Set initial unit based on the initial table display
+        if (inchTable.style.display === "table") {
+            selectedUnit = "in";
+        } else {
+            selectedUnit = "cm";
+        }
+    
+        // Update button classes and table visibility based on initial unit
+        updateUnit(selectedUnit);
+    });
+</script>
 
-    </script>
+<script>
+    var sizeButtons = document.querySelectorAll('.size-btn');
+    var selectedSize = ""; // Variable to store the selected size
+
+    var quantityDisplay = document.getElementById('quantity-display');
+    quantityDisplay.textContent = 1; // Set initial quantity to 1
+
+    sizeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            sizeButtons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+
+            this.classList.add('active');
+            selectedSize = this.getAttribute("data-size"); // Update selectedSize variable
+            fetchQuantities(); // Fetch quantities for the selected size
+        });
+    });
+
+    var decreaseButton = document.getElementById('decrease-quantity');
+    var increaseButton = document.getElementById('increase-quantity');
+
+    decreaseButton.addEventListener('click', function() {
+        var currentQuantity = parseInt(quantityDisplay.textContent, 10);
+        if (currentQuantity > 1) {
+            quantityDisplay.textContent = currentQuantity - 1;
+        }
+    });
+
+    increaseButton.addEventListener('click', function() {
+        var currentQuantity = parseInt(quantityDisplay.textContent, 10);
+        var maxQuantity = parseInt(quantityDisplay.dataset.maxQuantity, 10); // Use dataset to store max quantity
+        if (currentQuantity < maxQuantity) {
+            quantityDisplay.textContent = currentQuantity + 1;
+        }
+    });
+
+    // Function to fetch quantities based on selected size
+    
+    const fetchQuantities = function () {
+    // Fetch quantities for the selected size
+    fetch(`/get_quantities/?size=${selectedSize}`)
+        .then(response => response.json())
+        .then(data => {
+            // Update the maximum quantity that can be selected
+            quantityDisplay.dataset.maxQuantity = data; // Store max quantity in dataset
+        })
+        .catch(error => {
+            console.error("Error fetching quantities:", error);
+        });
+    };
+
+    // Event listener for size selection
+    sizeSelection.addEventListener('change', function() {
+        // Fetch quantities for the selected size
+        fetchQuantities();
+
+        // Reset quantity to 1 when a size is selected
+        quantityDisplay.textContent = "1";
+    });
+    
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Fetch initial quantities
+        fetchQuantities();
+        
+        // Reset quantity to 1 when a size is not selected
+        if (selectedSize === "") {
+            quantityDisplay.textContent = 1;
+        }
+    });
+</script>
+
+
+
+<script>
+    $(document).ready(function() {
+    var imagePaths = [
+        "{% static '/images/product-1.png' %}",
+        "{% static '/images/product-2.png' %}",
+        "{% static '/images/product-3.png' %}"
+    ];
+
+    var currentIndex = 0;
+    var maxIndex = imagePaths.length - 1;
+
+    // Function to show the current image
+    function showImage(index) {
+        $(".current-img").attr("src", imagePaths[index]);
+    }
+
+    // Initial display
+    showImage(currentIndex);
+    updateButtonStates();
+
+    // Update button states
+    function updateButtonStates() {
+        if (currentIndex === 0) {
+            $(".prev-btn").prop("disabled", true);
+        } else {
+            $(".prev-btn").prop("disabled", false);
+        }
+
+        if (currentIndex === maxIndex) {
+            $(".next-btn").prop("disabled", true);
+        } else {
+            $(".next-btn").prop("disabled", false);
+        }
+    }
+
+    // Previous button click event
+    $(".prev-btn").click(function() {
+        currentIndex--;
+        showImage(currentIndex);
+        updateButtonStates();
+    });
+
+    // Next button click event
+    $(".next-btn").click(function() {
+        currentIndex++;
+        showImage(currentIndex);
+        updateButtonStates();
+    });
+});
+
+</script>
+
+
+
 
 </body>
-
 </html>
