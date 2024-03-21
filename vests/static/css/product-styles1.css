@@ -216,3 +216,13 @@ img {
     color: white;
 }
 
+.unit-toggle {
+    border: 1px solid #ccc; /* Default border color */
+    padding: 5px 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.unit-toggle.active {
+    border: 1px solid black; /* Border color when button is active */
+}
