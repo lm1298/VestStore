@@ -162,9 +162,8 @@ img {
 }
 
 .product-details {
-    padding: 20px; 
     background-color: white; 
-    border-radius: 10px; 
+    margin-left: 10px; 
     align-items: center;
     justify-content: center;
 }
@@ -207,7 +206,7 @@ img {
 .add-to-cart {
     border-radius: 20px; 
     margin-right: 20px;
-    z-index: 1;
+    z-index: 10;
 }
 .add-to-cart:hover {
     background-color: #8bc734; 
