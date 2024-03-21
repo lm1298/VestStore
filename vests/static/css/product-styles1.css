@@ -235,3 +235,12 @@ img {
     height: 60px; 
     z-index: 9999;
 }
+
+/* Adjustments for the "ADD TO CART" button on mobile phones */
+@media (max-width: 768px) {
+    .add-to-cart {
+        margin-left: 20px; 
+        margin-right: 20px; 
+        width: calc(100% - 40px); 
+    }
+}
