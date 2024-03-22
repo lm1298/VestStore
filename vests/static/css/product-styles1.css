@@ -233,3 +233,9 @@ img {
 .unit-toggle.active {
     border: 1px solid black; /* Border color when button is active */
 }
+
+@media (max-width: 600px) {
+    .add-to-cart-container {
+        margin-bottom: 40px; 
+    }
+}
