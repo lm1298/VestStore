@@ -205,7 +205,6 @@ img {
 }
 .add-to-cart {
     border-radius: 20px; 
-    z-index: 10;
     background-color: black; 
     border-color: black; 
     color: #8bc734; 
@@ -236,6 +235,6 @@ img {
 
 @media (max-width: 600px) {
     .add-to-cart-container {
-        margin-bottom: 40px; 
+        margin-bottom: 60px; 
     }
 }
