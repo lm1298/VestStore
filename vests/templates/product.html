@@ -76,10 +76,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <label for="unitToggle">Size in:</label>
-                <button id="inchesBtn" class="unit-toggle active" data-unit="in">in</button>
-                <button id="centimetersBtn" class="unit-toggle" data-unit="cm">cm</button>
-                <br><br>
+                <div style="display: flex; justify-content: center;">
+                <button id="inchesBtn" class="unit-toggle active" style="align-items:center;" data-unit="in">in</button>
+                <button id="centimetersBtn" class="unit-toggle" style="align-items:center;" data-unit="cm">cm</button>
+                </div>
+                <br>
                 <table class="table table-dark inch-table" id="sizeChartTable" style="color:white; font-size: 12px; text-align: center;">
                     <tr>
                         <th>Size</th>
