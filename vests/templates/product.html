@@ -35,11 +35,9 @@
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12">
-            <!-- Product details -->
             <div class="product-details">
-                <!-- Your product details content here -->
                 <h3 style="color: #6aad06; margin-top: 20px;"><b>25mph Vests</b></h3>
-                <p class = "description">Stay safe and visible in high-speed environments with our 25mph high-visibility Vest. Built with durable materials and adjustable straps for a secure fit, ensures you're easily seen even in low-light conditions. Ideal for construction workers, road crew members, or cyclists, invest in your safety today.</p>
+                <p class = "description">Stay safe and visible in high-speed environments with our 25mph high-visibility vest. Built with durable materials and adjustable straps for a secure fit, ensures you're easily seen even in low-light conditions. Ideal for construction workers, road crew members, or cyclists, invest in your safety today.</p>
                 
                 <p style="color:#6aad06; font-size: 18px; font-weight: 600;">$19.99</p>
                 <div id="size-buttons">
@@ -148,8 +146,7 @@
         var centimetersBtn = document.getElementById("centimetersBtn");
         var inchTable = document.querySelector(".inch-table");
         var cmTable = document.querySelector(".cm-table");
-        var selectedUnit = "in"; // Default unit is inches
-    
+        var selectedUnit = "in"; 
         // Function to update button classes and table visibility
         function updateUnit(unit) {
             if (unit === "in") {
@@ -165,13 +162,13 @@
             }
         }
     
-        // Add event listener for inches button
+        // Event listener for inches button
         inchesBtn.addEventListener("click", function () {
             selectedUnit = "in";
             updateUnit(selectedUnit);
         });
     
-        // Add event listener for centimeters button
+        // Event listener for centimeters button
         centimetersBtn.addEventListener("click", function () {
             selectedUnit = "cm";
             updateUnit(selectedUnit);
@@ -191,7 +188,7 @@
 
 <script>
     var sizeButtons = document.querySelectorAll('.size-btn');
-    var selectedSize = ""; // Variable to store the selected size
+    var selectedSize = ""; 
 
     var quantityDisplay = document.getElementById('quantity-display');
     quantityDisplay.textContent = 1; // Set initial quantity to 1
@@ -262,8 +259,6 @@
     });
 </script>
 
-
-
 <script>
     $(document).ready(function() {
     var imagePaths = [
@@ -313,11 +308,7 @@
         updateButtonStates();
     });
 });
-
 </script>
-
-
-
 
 </body>
 </html>
