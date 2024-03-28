@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Vest
-from django.http import JsonResponse 
+from django.http import HttpResponse, JsonResponse 
+import json
 
 # Create your views here.
 def home(request):
@@ -23,4 +24,33 @@ def get_quantities(request):
         return JsonResponse({"error": "Size parameter is required"}, status=400)
     
 def cart(request):
-    return render(request, 'cart.html')
+    cart = request.session.get('cart', {})
+    items = []
+
+    for size, quantity in cart.items():
+        vest = Vest.objects.filter(size=size).first()
+        if vest:
+            items.append({'size': size, 'quantity': quantity, 'price': float(vest.price)})
+
+    context = {'items': items}
+    return render(request, 'cart.html', {'items': items})
+
+def add_to_cart(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        print(data)
+        selected_size = data.get('size')
+        selected_quantity = int(data.get('quantity'))
+        cart = request.session.get('cart', {})
+
+        if selected_size in cart:
+            cart[selected_size] += selected_quantity
+        else:
+            cart[selected_size] = selected_quantity
+
+        request.session['cart'] = cart
+        print(cart.items())
+        return JsonResponse({'message': 'Item added to cart'}, status=200)
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=400)
+
