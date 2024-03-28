@@ -124,3 +124,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_SECURE = True  # Set to True if using HTTPS
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Set to True if you want sessions to expire when the browser is closed
