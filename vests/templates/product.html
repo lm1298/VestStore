@@ -18,11 +18,10 @@
 <div class="container1">
     <div class="left">
         <a href="/" style="color:white;">Home</a>
-        <a href="{% url 'about' %}" style="color:white;">About</a>
+        <a href="{% url 'product' %}" style="color:white;">Products</a>
     </div>
     <div class="right">
-        <a href="{% url 'product' %}" style="color:white;">Products</a>
-        <a href="{% url 'cart' %}" style="color:white;">Cart</a>
+        <a href="{% url 'cart' %}" style="color:white;"><i class="fas fa-shopping-cart"></i></a>
     </div>
 </div>
 
@@ -36,11 +35,9 @@
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12">
-            <!-- Product details -->
             <div class="product-details">
-                <!-- Your product details content here -->
                 <h3 style="color: #6aad06; margin-top: 20px;"><b>25mph Vests</b></h3>
-                <p class = "description">Stay safe and visible in high-speed environments with our 25mph High-Visibility Vest. Built with durable materials and adjustable straps for a secure fit, ensures you're easily seen even in low-light conditions. Ideal for construction workers, road crew members, or cyclists, invest in your safety today.</p>
+                <p class = "description">Stay safe and visible in high-speed environments with our 25mph high-visibility vest. Built with durable materials and adjustable straps for a secure fit, ensures you're easily seen even in low-light conditions. Ideal for construction workers, road crew members, or cyclists, invest in your safety today.</p>
                 
                 <p style="color:#6aad06; font-size: 18px; font-weight: 600;">$19.99</p>
                 <div id="size-buttons">
@@ -79,10 +76,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <label for="unitToggle">Size in:</label>
-                <button id="inchesBtn" class="unit-toggle active" data-unit="in">in</button>
-                <button id="centimetersBtn" class="unit-toggle" data-unit="cm">cm</button>
-                <br><br>
+                <div style="display: flex; justify-content: center;">
+                <button id="inchesBtn" class="unit-toggle active" style="align-items:center;" data-unit="in">in</button>
+                <button id="centimetersBtn" class="unit-toggle" style="align-items:center;" data-unit="cm">cm</button>
+                </div>
+                <br>
                 <table class="table table-dark inch-table" id="sizeChartTable" style="color:white; font-size: 12px; text-align: center;">
                     <tr>
                         <th>Size</th>
@@ -135,7 +133,7 @@
 <div class="container-fluid" style="padding-left: 0;">
     <div class="row">
         <div class="col-lg-12">
-            <div class="footer" style="background-color: #424041; text-align: center; position: fixed; bottom: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 40px;">
+            <div class="footer" style="background-color: #555555; text-align: center; position: fixed; bottom: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 40px;">
                 <p style="color: white; font-size: 15px; font-family: Arial, Helvetica, sans-serif; margin-top: 10px;">Contact us: <b>25mphvests@infinity.com</b></p>
             </div>
         </div>
@@ -149,8 +147,7 @@
         var centimetersBtn = document.getElementById("centimetersBtn");
         var inchTable = document.querySelector(".inch-table");
         var cmTable = document.querySelector(".cm-table");
-        var selectedUnit = "in"; // Default unit is inches
-    
+        var selectedUnit = "in"; 
         // Function to update button classes and table visibility
         function updateUnit(unit) {
             if (unit === "in") {
@@ -166,13 +163,13 @@
             }
         }
     
-        // Add event listener for inches button
+        // Event listener for inches button
         inchesBtn.addEventListener("click", function () {
             selectedUnit = "in";
             updateUnit(selectedUnit);
         });
     
-        // Add event listener for centimeters button
+        // Event listener for centimeters button
         centimetersBtn.addEventListener("click", function () {
             selectedUnit = "cm";
             updateUnit(selectedUnit);
@@ -192,7 +189,7 @@
 
 <script>
     var sizeButtons = document.querySelectorAll('.size-btn');
-    var selectedSize = ""; // Variable to store the selected size
+    var selectedSize = ""; 
 
     var quantityDisplay = document.getElementById('quantity-display');
     quantityDisplay.textContent = 1; // Set initial quantity to 1
@@ -263,8 +260,6 @@
     });
 </script>
 
-
-
 <script>
     $(document).ready(function() {
     var imagePaths = [
@@ -314,11 +309,7 @@
         updateButtonStates();
     });
 });
-
 </script>
-
-
-
 
 </body>
 </html>
