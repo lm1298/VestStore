@@ -130,6 +130,22 @@
         </div>
     </div>
 </div>
+
+<div class="modal" tabindex="-1" role="dialog" id="cart-modal">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="margin: auto; max-width: 200px;">
+      <div class="modal-content" style="background-color: #555555;">
+        <div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-right: 10px; margin-top: 10px;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="height: 50px; margin-bottom: 30px;">
+          <p style="text-align: center; color: white;">Added to cart</p>
+        </div>
+      </div>
+    </div>
+</div>
+
 <div class="container-fluid" style="padding-left: 0;">
     <div class="row">
         <div class="col-lg-12">
@@ -139,6 +155,62 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addToCartButton = document.querySelector('.add-to-cart');
+        var cartModal = $('#cart-modal');
+        
+        addToCartButton.addEventListener('click', function() {
+            const selectedSize = document.querySelector('.size-btn.active').getAttribute('data-size');
+            const selectedQuantity = parseInt(document.getElementById('quantity-display').textContent);
+            
+            // Send a request to add the product to the cart
+            fetch('/add_to_cart/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken'),  // Ensure you have a function to get CSRF token
+                },
+                body: JSON.stringify({
+                    size: selectedSize,
+                    quantity: selectedQuantity,
+                    // You may need to send other product details here
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    cartModal.modal('show');
+                } else {
+                    // Handle errors
+                    console.error('Failed to add product to cart');
+                }
+            })
+            .catch(error => {
+                console.error('Error adding product to cart:', error);
+            });
+        });
+        
+    });
+    // Define the getCookie function
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Check if the cookie contains the specified name
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    // Extract and return the cookie value
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+
 
 <script>
     // JavaScript code for handling unit toggle
