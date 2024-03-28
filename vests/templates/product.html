@@ -155,6 +155,7 @@
         </div>
     </div>
 </div>
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -170,7 +171,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': getCookie('csrftoken'),  // Ensure you have a function to get CSRF token
+                    'X-CSRFToken': document.querySelector('input[name="csrfmiddlewaretoken"]').value,
                 },
                 body: JSON.stringify({
                     size: selectedSize,
@@ -192,23 +193,7 @@
         });
         
     });
-    // Define the getCookie function
-    function getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].trim();
-                // Check if the cookie contains the specified name
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    // Extract and return the cookie value
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
+    
 </script>
 
 
