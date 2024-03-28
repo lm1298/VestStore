@@ -141,6 +141,62 @@
 </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addToCartButton = document.querySelector('.add-to-cart');
+        
+        addToCartButton.addEventListener('click', function() {
+            const selectedSize = document.querySelector('.size-btn.active').getAttribute('data-size');
+            const selectedQuantity = parseInt(document.getElementById('quantity-display').textContent);
+            
+            // Send a request to add the product to the cart
+            fetch('/add_to_cart/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken'),  // Ensure you have a function to get CSRF token
+                },
+                body: JSON.stringify({
+                    size: selectedSize,
+                    quantity: selectedQuantity,
+                    // You may need to send other product details here
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    
+                    // Handle success (e.g., show a success message)
+                } else {
+                    // Handle errors
+                    console.error('Failed to add product to cart');
+                }
+            })
+            .catch(error => {
+                console.error('Error adding product to cart:', error);
+            });
+        });
+        
+    });
+    // Define the getCookie function
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Check if the cookie contains the specified name
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    // Extract and return the cookie value
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+
+
+<script>
     // JavaScript code for handling unit toggle
     document.addEventListener("DOMContentLoaded", function () {
         var inchesBtn = document.getElementById("inchesBtn");
