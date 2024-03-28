@@ -7,29 +7,30 @@
     <title>Vest Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{% static 'css/home-styles-1.css' %}">
 </head>
-<div class="container1">
-    <div class="left">
-        <a href="/" style="color:white;">Home</a>
-        <a href="{% url 'about' %}" style="color:white;">About</a>
+<body style="background-color: #FFFFFF;">
+    <div class="container1">
+        <div class="left">
+            <a href="/" style="color:white;">Home</a>
+            <a href="{% url 'product' %}" style="color:white;">Products</a>
+        </div>
+        <div class="right">
+            <a href="{% url 'cart' %}" style="color:white;"><i class="fas fa-shopping-cart"></i></a>
+        </div>
     </div>
-    <div class="right">
-        <a href="{% url 'product' %}" style="color:white;">Products</a>
-        <a href="{% url 'cart' %}" style="color:white;">Cart</a>
+    <div class="container-fluid" style="padding-left: 0;">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer" style="background-color: #424041; text-align: center; position: fixed; bottom: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 40px;">
+                    <p style="color: white; font-size: 15px; font-family: Arial, Helvetica, sans-serif; margin-top: 10px;">Contact us: <b>25mphvests@infinity.com</b></p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <p class="p1"><b><i>Are you a walker or a jogger looking for safety?</i></b></p>
-    <p class="p2"><b><i>Look no further than our 25mph vests!!</i></b></p>
-    <br>
-    <button type="button" class="btn btn-primary" style="background-color: black; color: #FFFFFF;"><a href="{% url 'product' %}" style="color:inherit; text-decoration: none;">Shop now</a></button>
-</body>
+    </body>
 </html>
