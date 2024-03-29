@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Vest
 from django.http import HttpResponse, JsonResponse 
 import json
+from django.views.decorators.csrf import csrf_exempt
+from django.template.loader import render_to_string
 
 # Create your views here.
 def home(request):
@@ -42,6 +44,20 @@ def add_to_cart(request):
         selected_size = data.get('size')
         selected_quantity = int(data.get('quantity'))
         cart = request.session.get('cart', {})
+
+        current_cart_quantity = cart.get(selected_size, 0)
+        
+        # Retrieve the available quantity for the selected size from the database
+        vest = Vest.objects.filter(size=selected_size).first()
+        available_quantity = vest.quantity if vest else 0
+        
+        # Calculate the maximum quantity that can be added to the cart
+        max_quantity = available_quantity - current_cart_quantity
+        
+        # Check if the selected quantity exceeds the maximum allowed quantity
+        if selected_quantity > max_quantity:
+            message = f'Only {max_quantity} more can be added to the cart.'
+            return JsonResponse({'error': message, 'popup': True}, status=400)
 
         if selected_size in cart:
             cart[selected_size] += selected_quantity
