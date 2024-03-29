@@ -1,36 +1,75 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vest Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="{% static 'css/home-styles-1.css' %}">
+    <style>
+        .mySlides { display: none; }
+        .fade { animation: fade 3s infinite; }
+        .mySlides img { height: 720px; object-fit: cover; }
+        @keyframes fade { from { opacity: .4 } to { opacity: 1 } }
+    </style>
 </head>
+
 <body style="background-color: #FFFFFF;">
     <div class="container1">
         <div class="left">
             <a href="/" style="color:white;">Home</a>
             <a href="{% url 'product' %}" style="color:white;">Products</a>
         </div>
+        <div class="title">25mph Vests </div>
         <div class="right">
             <a href="{% url 'cart' %}" style="color:white;"><i class="fas fa-shopping-cart"></i></a>
         </div>
     </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="{% static '/images/home-2.jpeg' %}" style="width:100%">
+            <p class="slide-text">We offer the best vests in town. Check out our collection today!</p>
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static '/images/home-1.jpeg' %}" style="width:100%">
+            <p class="slide-text">Our vests are made from high-quality materials.</p>
+        </div>
+    </div>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
     <div class="container-fluid" style="padding-left: 0;">
         <div class="row">
             <div class="col-lg-12">
-                <div class="footer" style="background-color: #424041; text-align: center; position: fixed; bottom: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 40px;">
-                    <p style="color: white; font-size: 15px; font-family: Arial, Helvetica, sans-serif; margin-top: 10px;">Contact us: <b>25mphvests@infinity.com</b></p>
+                <div class="footer"
+                    style="background-color: #424041; text-align: center; position: fixed; bottom: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 40px;">
+                    <p
+                        style="color: white; font-size: 15px; font-family: Arial, Helvetica, sans-serif; margin-top: 10px;">
+                        Contact us: <b>25mphvests@infinity.com</b></p>
                 </div>
             </div>
         </div>
     </div>
-    </body>
+</body>
+
 </html>
