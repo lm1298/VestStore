@@ -53,4 +53,7 @@ def add_to_cart(request):
         return JsonResponse({'message': 'Item added to cart'}, status=200)
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)
+    
+def confirmation(request):
+    return render(request, 'confirmation.html')
 
