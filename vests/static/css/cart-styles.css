@@ -60,3 +60,6 @@ body {
     font-weight: bold; /* Optionally make the text bold */
     text-align: left;
 }
+.col-width1 {
+    width: 10%; /* Adjust this value as needed */
+}
