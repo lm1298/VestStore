@@ -186,6 +186,19 @@
             $(".quantity-btn").click(function() {
                 calculateGrandTotal();
             });
+
+            // Handle remove item click event
+            $(".remove-item").click(function() {
+                $(this).closest("tr").remove(); // Remove the entire row
+                updateSessionCart();
+                calculateGrandTotal(); // Recalculate grand total after removing the item
+            });
+    
+            // Proceed to Checkout button click event
+            $("#proceed-to-checkout").click(function() {
+                // Handle the checkout process here
+                window.location.href = "{% url 'checkout' %}";
+            });
     
         });
     </script>
