@@ -34,3 +34,29 @@ body {
 .right a {
     margin-left: 20%;
 }
+.col-width {
+    width: 20%; /* Adjust this value as needed */
+}
+.border-bottom {
+    border-bottom: 1px solid #DEE2E6 !important;
+}
+#quantity-selector {
+    align-items: center;
+}
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    color: #17D71D;
+}
+.quantity-display {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+.grand-total {
+    color: #6AAD06; /* Change the color to your desired color */
+    font-weight: bold; /* Optionally make the text bold */
+    text-align: left;
+}
