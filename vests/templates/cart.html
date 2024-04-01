@@ -34,6 +34,7 @@
                         <!-- <th scope="col" class="col-width">Size</th> -->
                         <th scope="col" class="col-width">Price</th>
                         <th scope="col" class="col-width">Quantity</th>
+                        <th scope="col" class="col-width">Subtotal</th>
                         <th scope="col" class="col-width1"></th>
                     </tr>
                 </thead>
@@ -59,6 +60,7 @@
                                 <button class="increase-quantity quantity-btn">+</button>
                             </div>
                         </td>
+                        <td class="align-middle subtotal">$ {{ item.quantity|calculate_subtotal:item.price }}</td>
                         <td class="align-middle" style="text-align: left;">
                             <button type="button" class="remove-item" aria-label="Close" style="background: none; border: none;">
                                 <span aria-hidden="true">&times;</span>
