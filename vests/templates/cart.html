@@ -133,6 +133,60 @@
                     updateSessionCart();
                 }
             });
+
+            // Function to update subtotal
+            function updateSubtotal(button) {
+                console.log("Updating subtotal...");
+                var quantityDisplay = button.siblings(".quantity-display");
+                var quantity = parseInt(quantityDisplay.text());
+                var price = parseFloat(button.closest("tr").find(".item-price").text());
+                var subtotal = quantity * price;
+                button.closest("tr").find(".subtotal").text(subtotal.toFixed(2));
+                calculateGrandTotal();
+            }
+    
+            // Function to update session cart
+            function updateSessionCart() {
+                var cart = {};
+                $(".quantity-display").each(function() {
+                    var size = $(this).closest("tr").find(".item-size").text();
+                    var quantity = parseInt($(this).text());
+                    cart[size] = quantity;
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "{% url 'update_cart' %}",
+                    data: JSON.stringify(cart),
+                    contentType: "application/json",
+                    success: function(data) {
+                        console.log(data.message);
+                        
+                    },
+                    error: function(xhr, errmsg, err) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                });
+            }
+
+            function calculateGrandTotal() {
+                var grandTotal = 0;
+                $(".subtotal").each(function() {
+                    grandTotal += parseFloat($(this).text().replace("$", ""));
+                });
+                $("#grand-total").text("$ " + grandTotal.toFixed(2));
+                // Store the grand total in localStorage
+                localStorage.setItem('grandTotal', grandTotal.toFixed(2));
+            }
+            
+    
+            // Initial calculation of grand total
+            calculateGrandTotal();
+    
+            // Update Grand Total when quantity changes
+            $(".quantity-btn").click(function() {
+                calculateGrandTotal();
+            });
+    
         });
     </script>
 </body>
