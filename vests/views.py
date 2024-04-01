@@ -83,3 +83,6 @@ def update_cart(request):
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)
 
+def checkout(request):
+    return render(request, 'payment.html')
+
