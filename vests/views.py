@@ -73,3 +73,13 @@ def add_to_cart(request):
 def confirmation(request):
     return render(request, 'confirmation.html')
 
+@csrf_exempt
+def update_cart(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        cart = {size: quantity for size, quantity in data.items() if quantity > 0}
+        request.session['cart'] = cart
+        return JsonResponse({'message': 'Cart updated successfully'}, status=200)
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=400)
+
