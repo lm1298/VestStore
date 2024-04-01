@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vest Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{% static 'css/confirmation-styles.css' %}">
+</head>
+<body style="background-color: #FFFFFF;">
+    <div class="container1">
+        <div class="left">
+            <a href="/" style="color:white;">Home</a>
+            <a href="{% url 'product' %}" style="color:white;">Products</a>
+        </div>
+        <div class="right">
+            <a href="{% url 'cart' %}" style="color:white;"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+    <div class="container-fluid center-content">
+        <div class="circle">
+            <i class="fas fa-check"></i>
+        </div>
+        <p style="margin-top: 20px; font-size: 46px; font-weight: 500;">Order placed successfully!!</p>
+        <p style="font-size: 20px;">An email confirmation has been sent to you</p>
+    </div>
+    <div class="container-fluid" style="padding-left: 0;">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer" style="background-color: #424041; text-align: center; position: fixed; bottom: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 40px;">
+                    <p style="color: white; font-size: 15px; font-family: Arial, Helvetica, sans-serif; margin-top: 10px;">Contact us: <b>25mphvests@infinity.com</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
