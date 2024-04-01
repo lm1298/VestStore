@@ -34,12 +34,25 @@
     </div>
     <div class="slideshow-container">
         <div class="mySlides fade">
-            <img src="{% static '/images/home2.jpeg' %}" style="width:100%">
-            <p class="slide-text">We offer the best vests in town. Check out our collection today!</p>
+            <img src="{% static 'images/slideimage-2.jpeg' %}" class="slide-image" style="width:100%;">
+            <div class="slide-text">
+                <h2>Experience the Freedom of Movement with 25MPH Vests!</h2>
+                <p>✅ Perfect for outdoor activities</p>
+                <p>✅ High visibility for safety</p>
+                <p>✅ Comfortable and stylish</p>
+                <a href="{% url 'product' %}" class="shop-now">Shop Now</a>
+            </div>
         </div>
         <div class="mySlides fade">
-            <img src="{% static '/images/home1.jpeg' %}" style="width:100%">
-            <p class="slide-text">Our vests are made from high-quality materials.</p>
+            <img src="{% static 'images/slideimage-1.jpeg' %}" class="slide-image" style="width:100%">
+            <!-- Rest of the code -->
+            <div class="slide-text">
+                <h2>Join the 25MPH Vests Community!</h2>
+                <p>🏃‍♂️ Be part of a community that values safety and style</p>
+                <p>🌎 Help spread the word about pedestrian safety</p>
+                <p>🎁 Enjoy exclusive offers and promotions</p>
+                <a href="{% url 'product' %}" class="shop-now">Shop Now</a>
+            </div>
         </div>
     </div>
     <script>
