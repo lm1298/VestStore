@@ -4,7 +4,15 @@ from django.http import HttpResponse, JsonResponse
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.template.loader import render_to_string
+import paypalrestsdk
+from django.conf import settings
+from django.shortcuts import redirect
+from django.urls import reverse
 
+paypalrestsdk.configure({
+  "mode": settings.PAYPAL_MODE,
+  "client_id": settings.PAYPAL_CLIENT_ID,
+  "client_secret": settings.PAYPAL_CLIENT_SECRET })
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -86,3 +94,71 @@ def update_cart(request):
 def checkout(request):
     return render(request, 'payment.html')
 
+def paypal_payment(request):
+    if request.method == 'POST':
+        # Get the cart and shipping details from the session
+        cart = request.session.get('cart', {})
+        shipping_details = request.session.get('shipping_details', {})
+        items = []
+        total = 0
+
+        # Build the list of items for the payment
+        for size, quantity in cart.items():
+            vest = Vest.objects.filter(size=size).first()
+            if vest:
+                items.append({
+                    "name": f"Vest {size}",
+                    "sku": f"VEST-{size}",
+                    "price": str(vest.price),
+                    "currency": "USD",
+                    "quantity": quantity
+                })
+                total += vest.price * quantity
+
+        # Create the payment object
+        # ...
+
+                payment = paypalrestsdk.Payment({
+                    "intent": "sale",
+                    "payer": {
+                        "payment_method": "paypal"},
+                    "redirect_urls": {
+                        "return_url": request.build_absolute_uri(reverse('paypal_execute')),
+                        "cancel_url": request.build_absolute_uri(reverse('paypal_cancel'))},
+                    "transactions": [{
+                        "item_list": {
+                            "items": items},
+                        "amount": {
+                            "total": str(total),
+                            "currency": "USD"},
+                        "description": "Vest Infinity Order"}]})
+
+        # Create the payment
+        if payment.create():
+            for link in payment.links:
+                if link.method == "REDIRECT":
+                    # Redirect the user to the PayPal payment page
+                    return redirect(link.href)
+        else:
+            return JsonResponse({'error': 'An error occurred while creating the PayPal payment'}, status=400)
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=400)
+    
+def paypal_execute(request):
+    if request.method == 'GET':
+        payment_id = request.GET.get('paymentId')
+        payer_id = request.GET.get('PayerID')
+
+        # Execute the payment
+        payment = paypalrestsdk.Payment.find(payment_id)
+        if payment.execute({"payer_id": payer_id}):
+            # The payment has been completed successfully
+            return redirect('confirmation')
+        else:
+            return JsonResponse({'error': 'An error occurred while executing the PayPal payment'}, status=400)
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+def paypal_cancel(request):
+    # The payment has been cancelled by the user
+    return redirect('cart')
