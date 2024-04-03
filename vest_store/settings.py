@@ -126,3 +126,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 SESSION_COOKIE_SECURE = True  # Set to True if using HTTPS
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Set to True if you want sessions to expire when the browser is closed
+
+PAYPAL_RECEIVER_EMAIL = "vesttestBusiness@gmail.com"
+PAYPAL_TEST = True  # For sandbox mode
+PAYPAL_MODE = 'sandbox'  # sandbox or live
+PAYPAL_CLIENT_ID = 'AZPlVLeV8iUwn6RjA3Qk_0qGbjJkhloSxRaQO_EWYZilIXybr2uRENsrTIca2r6jxy-P4zsOHuahkvoR'
+PAYPAL_CLIENT_SECRET = 'EPBW5fK6c_8t8fZX9DVvE9Ul_clr4-TYZH10MSurPmgDBI_7OIOZnfxmaTzbqEF5LLVuQFJ50YUbbR0A'
