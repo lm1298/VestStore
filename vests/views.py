@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Vest
 from django.http import HttpResponse, JsonResponse 
 import json
@@ -85,4 +85,14 @@ def update_cart(request):
 
 def checkout(request):
     return render(request, 'payment.html')
+
+def shipping_details(request):
+    if request.method == 'POST':
+        # Save shipping details in the session
+        request.session['shipping_details'] = request.POST
+        # Redirect to PayPal payment page
+        return redirect('paypal_payment')
+    else:
+        # Display shipping details form
+        return render(request, 'payment.html')
 
