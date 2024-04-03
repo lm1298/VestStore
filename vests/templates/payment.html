@@ -58,6 +58,30 @@
             <input type="text" class="form-control" id="zip_code" name="zip_code" required>
         </div>
     </form>
+    <div id="paypal-button-container" style="margin-left: 150px; width:350px"></div>
+    <script>
+        paypal.Buttons({
+        createOrder: function(data, actions) {
+            // This function sets up the details of the transaction, including the amount and line item details.
+            var grandTotal = localStorage.getItem('grandTotal'); // Get the grand total from localStorage
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: grandTotal // Set the amount to the grand total
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            // This function captures the funds from the transaction.
+            return actions.order.capture().then(function(details) {
+                
+                window.location.href = "/confirmation";
+            });
+        }
+    }).render('#paypal-button-container');
+    </script>
+
 </div>
 </body>
 </html>
