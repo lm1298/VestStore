@@ -29,7 +29,11 @@
         </div>
         <div class="title">25mph Vests </div>
         <div class="right">
-            <a href="{% url 'cart' %}" style="color:white;"><i class="fas fa-shopping-cart"></i></a>
+            {% if cart_empty %}
+            <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-plus cart-icon"></i></a>
+        {% else %}
+            <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-arrow-down cart-icon"></i></a>
+        {% endif %}
         </div>
     </div>
     <div class="slideshow-container">

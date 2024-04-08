@@ -110,3 +110,7 @@ body {
     transform: scale(1);
 
 }
+.cart-icon {
+    color: white;
+    font-size: 25px;
+}
