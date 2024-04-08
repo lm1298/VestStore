@@ -63,3 +63,7 @@ body {
 .col-width1 {
     width: 10%; /* Adjust this value as needed */
 }
+.cart-icon {
+    color: white;
+    font-size: 25px;
+}
