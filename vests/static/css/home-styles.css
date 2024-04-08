@@ -5,7 +5,7 @@ body {
     background-color: #555555;
     color: green;
     text-align: left;
-    overflow: hidden;
+    overflow: auto;
 
 
 }
@@ -109,6 +109,13 @@ body {
     display: block;
     transform: scale(1);
 
+}
+
+.about-section {
+    padding: 50px;
+    text-align: justify;
+    background-color: #f0f0f0;
+    color: #333333;
 }
 .cart-icon {
     color: white;

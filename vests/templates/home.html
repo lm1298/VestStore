@@ -14,10 +14,28 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
     <style>
-        .mySlides { display: none; }
-        .fade { animation: fade 3s infinite; }
-        .mySlides img { height: 720px; object-fit: cover; }
-        @keyframes fade { from { opacity: .4 } to { opacity: 1 } }
+        .mySlides {
+            display: none;
+        }
+
+        .fade {
+            animation: fade 3s infinite;
+        }
+
+        .mySlides img {
+            height: 720px;
+            object-fit: cover;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
     </style>
 </head>
 
@@ -75,6 +93,27 @@
             setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
     </script>
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>About Us</h2>
+                    <p>We are a nonprofit organization passionately dedicated to enhancing the safety of neighborhood
+                        walkers and joggers. Our mission is simple yet crucial: we strive to promote visibility and
+                        safeguard individuals as they navigate their communities. We work hard to reduce accidents and
+                        cultivate a culture of awareness on the streets.</p>
+                    <p>Our lightweight vest is designed to make pedestrians more visible to motorists, cyclists, and
+                        fellow pedestrians alike. It serves as both a safety measure and a statement, reminding everyone
+                        to slow down and pay attention to those sharing the road.</p>
+                    <p>By wearing our vest, individuals can significantly increase their presence, especially during
+                        low-light conditions or high-traffic areas. Our commitment to community well-being empowers
+                        individuals to take charge of their safety while fostering a sense of unity and responsibility
+                        among neighbors. Join us in our journey towards safer streets in our neighborhood.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container-fluid" style="padding-left: 0;">
         <div class="row">
             <div class="col-lg-12">
