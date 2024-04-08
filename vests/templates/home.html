@@ -45,7 +45,7 @@
             <a href="/" style="color:white;">Home</a>
             <a href="{% url 'product' %}" style="color:white;">Products</a>
         </div>
-        <div class="title">25mph Vests </div>
+        <!--<div class="title">25mph Vests </div>-->
         <div class="right">
             {% if cart_empty %}
             <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-plus cart-icon"></i></a>
@@ -56,7 +56,8 @@
     </div>
     <div class="slideshow-container">
         <div class="mySlides fade">
-            <img src="{% static 'images/slideimage-2.jpeg' %}" class="slide-image" style="width:100%;">
+            <img src="{% static 'images/slideimage-2.jpeg' %}" class="slide-image desktop" style="width:100%;">
+            <img src="{% static 'images/homeslide-2.jpeg' %}" class="slide-image mobile" style="width:100%;">
             <div class="slide-text">
                 <h2>Experience the Freedom of Movement with 25MPH Vests!</h2>
                 <p>✅ Perfect for outdoor activities</p>
@@ -66,7 +67,8 @@
             </div>
         </div>
         <div class="mySlides fade">
-            <img src="{% static 'images/slideimage-1.jpeg' %}" class="slide-image" style="width:100%">
+            <img src="{% static 'images/slideimage-1.jpeg' %}" class="slide-image desktop" style="width:100%">
+            <img src="{% static 'images/homeslide-1.jpeg' %}" class="slide-image mobile" style="width:100%;">
             <!-- Rest of the code -->
             <div class="slide-text">
                 <h2>Join the 25MPH Vests Community!</h2>
