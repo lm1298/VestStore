@@ -6,8 +6,6 @@ body {
     color: green;
     text-align: left;
     overflow: auto;
-
-
 }
 
 .element {
@@ -120,4 +118,34 @@ body {
 .cart-icon {
     color: white;
     font-size: 25px;
+}
+
+
+/* For screens smaller than 768px (typical mobile devices) */
+@media only screen and (max-width: 767px) {
+    .mySlides img.desktop { display: none; }
+    .slide-text {
+        font-size: 1.2em; 
+    }
+    .slide-text h2{
+        font-size: 1.2em; 
+    }
+    .mySlides img {
+        height: auto; 
+    }
+    .slide-image {
+        height: auto; 
+    }
+    
+}
+
+/* For screens larger than or equal to 768px (typical desktop screens) */
+@media only screen and (min-width: 768px) {
+    .mySlides img.mobile { display: none; }
+    .slide-text {
+        font-size: 1.5em; 
+    }
+    .mySlides img {
+        height: 720px; 
+    }
 }
