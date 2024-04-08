@@ -15,14 +15,16 @@ paypalrestsdk.configure({
   "client_secret": settings.PAYPAL_CLIENT_SECRET })
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    cart_empty = True if not request.session.get('cart') else False
+    return render(request, 'home.html', {'cart_empty': cart_empty})
 
 def about(request):
     return render(request, 'about.html')
 
 def product(request):
     vests = Vest.objects.all()
-    return render(request, 'product.html', {'vests': vests})
+    cart_empty = True if not request.session.get('cart') else False
+    return render(request, 'product.html', {'vests': vests, 'cart_empty': cart_empty})
 
 def get_quantities(request):
     size = request.GET.get("size")
@@ -36,6 +38,7 @@ def get_quantities(request):
 def cart(request):
     cart = request.session.get('cart', {})
     items = []
+    cart_empty = True if not request.session.get('cart') else False
 
     for size, quantity in cart.items():
         vest = Vest.objects.filter(size=size).first()
@@ -43,7 +46,7 @@ def cart(request):
             items.append({'size': size, 'quantity': quantity, 'price': float(vest.price)})
 
     context = {'items': items}
-    return render(request, 'cart.html', {'items': items})
+    return render(request, 'cart.html', {'items': items, 'cart_empty': cart_empty})
 
 def add_to_cart(request):
     if request.method == 'POST':
@@ -92,7 +95,8 @@ def update_cart(request):
         return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 def checkout(request):
-    return render(request, 'payment.html')
+    cart_empty = True if not request.session.get('cart') else False
+    return render(request, 'payment.html', {'cart_empty': cart_empty})
  
 def shipping_details(request):
     if request.method == 'POST':
