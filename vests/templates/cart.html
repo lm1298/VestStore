@@ -21,7 +21,11 @@
             <a href="{% url 'product' %}" style="color:white;">Products</a>
         </div>
         <div class="right">
-            <a href="{% url 'cart' %}" style="color:white;"><i class="fas fa-shopping-cart"></i></a>
+            {% if cart_empty %}
+            <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-plus cart-icon"></i></a>
+            {% else %}
+                <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-arrow-down cart-icon"></i></a>
+            {% endif %}
         </div>
     </div>
     <div class="container mt-5">
@@ -194,6 +198,7 @@
                 $(this).closest("tr").remove(); // Remove the entire row
                 updateSessionCart();
                 calculateGrandTotal(); // Recalculate grand total after removing the item
+                location.reload();
             });
     
             // Proceed to Checkout button click event
