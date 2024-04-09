@@ -96,9 +96,9 @@ body {
 }
 
 .shop-now:hover {
-    background-color: green;
-    color: green;
-    border-radius: 2px black;
+    background-color:green;
+    color:green;
+    border-color: black;
 }
 
 .slide-image {
@@ -148,4 +148,13 @@ body {
     .mySlides img {
         height: 720px; 
     }
+}
+.about-section h2 {
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
