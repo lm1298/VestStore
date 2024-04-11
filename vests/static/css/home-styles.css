@@ -22,7 +22,7 @@ body {
 }
 .left {
     display: flex;
-    margin-left: 7%;
+    margin-left: 6%;
 }
 .right {
     display: flex;
@@ -37,6 +37,11 @@ body {
 .col-width {
     width: 20%; /* Adjust this value as needed */
 }
+.logo {
+    height: 25px; /* Adjust to your liking */
+    width: 30px; /* Keeps the aspect ratio */
+    margin-left: 5px;
+}
 .mySlides img {
     width: 100%;
     height: 100%;
@@ -48,7 +53,6 @@ body {
     margin: auto;
 
 }
-
 
 .slide-text {
     position: absolute;
@@ -80,7 +84,7 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     color: white;
-    background-color: black;
+    background-color: #555555;
     padding: 12px 33px;
     border: none; 
     border-radius: 15px; 
