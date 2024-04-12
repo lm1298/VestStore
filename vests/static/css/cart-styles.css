@@ -54,7 +54,8 @@ body {
     height: 30px;
     border: 1px solid #ddd;
     background-color: #ddd;
-    color: #17D71D;
+    /* color: #17D71D; */
+    color: black;
 }
 .quantity-display {
     display: inline-block;

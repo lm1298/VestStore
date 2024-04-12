@@ -201,7 +201,8 @@ img {
     height: 30px;
     border: 1px solid #ddd;
     background-color: #ddd;
-    color: #17d71d;
+    /*color: #17d71d;*/
+    color: black;
 }
 
 .quantity-display {
@@ -210,11 +211,12 @@ img {
     text-align: center;
 }
 .add-to-cart {
-    border-radius: 20px; 
+    border-radius: 5px; 
     background-color: black; 
     border-color: black; 
     color: #8bc734; 
-    width: 400px;
+    width: 200px;
+    height: 35px;
 
 }
 .add-to-cart:hover {
