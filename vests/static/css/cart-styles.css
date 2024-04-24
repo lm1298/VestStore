@@ -74,3 +74,11 @@ body {
     color: white;
     font-size: 25px;
 }
+.donate-link {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
