@@ -82,10 +82,28 @@
             });
         },
         onApprove: function(data, actions) {
-            // This function captures the funds from the transaction.
             return actions.order.capture().then(function(details) {
-                
-                window.location.href = "/confirmation";
+                // Make an AJAX request to create the order
+                $.ajax({
+                    type: 'POST',
+                    url: "{% url 'create_order' %}",
+                    data: {
+                        full_name: $('#full_name').val(),
+                        customer_email: $('#customer_email').val(),
+                        address: $('#address').val(),
+                        city: $('#city').val(),
+                        zip_code: $('#zip_code').val(),
+                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function(response) {
+                        // Redirect to the confirmation page
+                        window.location.href = "/confirmation";
+                    },
+                    error: function(xhr, errmsg, err) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                        // Handle error
+                    }
+                });
             });
         }
     }).render('#paypal-button-container');
