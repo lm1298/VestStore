@@ -132,3 +132,10 @@ PAYPAL_TEST = True  # For sandbox mode
 PAYPAL_MODE = 'sandbox'  # sandbox or live
 PAYPAL_CLIENT_ID = 'AZPlVLeV8iUwn6RjA3Qk_0qGbjJkhloSxRaQO_EWYZilIXybr2uRENsrTIca2r6jxy-P4zsOHuahkvoR'
 PAYPAL_CLIENT_SECRET = 'EPBW5fK6c_8t8fZX9DVvE9Ul_clr4-TYZH10MSurPmgDBI_7OIOZnfxmaTzbqEF5LLVuQFJ50YUbbR0A'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '25mphveststore@gmail.com'  # Your Gmail address
+EMAIL_HOST_PASSWORD = 'ocggsmbshiimzsmc'  # Your Gmail password or app password if 2-step verification is enabled
+EMAIL_PORT = 587  # For TLS
+EMAIL_USE_TLS = True
