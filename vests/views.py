@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
-from .models import Vest
-from django.http import HttpResponse, JsonResponse 
+from .models import Vest, ShippingDetail, Order
+from django.http import HttpResponse, JsonResponse, HttpResponseNotAllowed
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.template.loader import render_to_string
 import paypalrestsdk
 from django.conf import settings
-from django.shortcuts import redirect
+from django.db import transaction
 from django.urls import reverse
 
 paypalrestsdk.configure({
@@ -98,81 +98,51 @@ def checkout(request):
     cart_empty = True if not request.session.get('cart') else False
     return render(request, 'payment.html', {'cart_empty': cart_empty})
  
-def shipping_details(request):
+@transaction.atomic
+def create_order(request):
     if request.method == 'POST':
-        # Save shipping details in the session
-        request.session['shipping_details'] = request.POST
-        # Redirect to PayPal payment page
-        return redirect('paypal_payment')
-    else:
-        # Display shipping details form
-        return render(request, 'payment.html')
+        # Retrieve shipping details from the form submission
+        full_name = request.POST.get('full_name')
+        email = request.POST.get('customer_email')
+        address = request.POST.get('address')
+        city = request.POST.get('city')
+        zip_code = request.POST.get('zip_code')
 
-def paypal_payment(request):
-    if request.method == 'POST':
-        # Get the cart and shipping details from the session
+        # Create the order instance
+        shippingdetail = ShippingDetail.objects.create(
+            full_name=full_name,
+            email=email,
+            address=address,
+            city=city,
+            zip_code=zip_code
+        )
+
+        # Retrieve items from the cart and create order items
         cart = request.session.get('cart', {})
-        shipping_details = request.session.get('shipping_details', {})
-        items = []
-        total = 0
-
-        # Build the list of items for the payment
         for size, quantity in cart.items():
-            vest = Vest.objects.filter(size=size).first()
-            if vest:
-                items.append({
-                    "name": f"Vest {size}",
-                    "sku": f"VEST-{size}",
-                    "price": str(vest.price),
-                    "currency": "USD",
-                    "quantity": quantity
-                })
-                total += vest.price * quantity
+            vest = Vest.objects.get(size=size)
+            Order.objects.create(
+                shippingdetail=shippingdetail,
+                size=size,
+                quantity=quantity,
+                price=vest.price
+            )
 
-        # Create the payment object
-        # ...
+            # Update the quantity of vests in the database
+            vest.quantity -= quantity
+            vest.save()
 
-                payment = paypalrestsdk.Payment({
-                    "intent": "sale",
-                    "payer": {
-                        "payment_method": "paypal"},
-                    "redirect_urls": {
-                        "return_url": request.build_absolute_uri(reverse('paypal_execute')),
-                        "cancel_url": request.build_absolute_uri(reverse('paypal_cancel'))},
-                    "transactions": [{
-                        "item_list": {
-                            "items": items},
-                        "amount": {
-                            "total": str(total),
-                            "currency": "USD"},
-                        "description": "Vest Infinity Order"}]})
+            # Check if the quantity dropped below 5 and send notification
+            if vest.quantity < 5:
+                vest.send_low_quantity_notification()
 
-        # Create the payment
-        if payment.create():
-            for link in payment.links:
-                if link.method == "REDIRECT":
-                    # Redirect the user to the PayPal payment page
-                    return redirect(link.href)
-        else:
-            return JsonResponse({'error': 'An error occurred while creating the PayPal payment'}, status=400)
+        # Clear the cart after creating the order
+        request.session['cart'] = {}
+
+        
+
+        # Redirect to a page indicating successful order placement
+        # return redirect('confirmation')
+        return JsonResponse({'message': 'Order placed successfully'}, status=200)
     else:
-        return JsonResponse({'error': 'Invalid request method'}, status=400)
-    
-def paypal_execute(request):
-    if request.method == 'GET':
-        payment_id = request.GET.get('paymentId')
-        payer_id = request.GET.get('PayerID')
-
-        # Execute the payment
-        payment = paypalrestsdk.Payment.find(payment_id)
-        if payment.execute({"payer_id": payer_id}):
-            # The payment has been completed successfully
-            return redirect('confirmation')
-        else:
-            return JsonResponse({'error': 'An error occurred while executing the PayPal payment'}, status=400)
-    else:
-        return JsonResponse({'error': 'Invalid request method'}, status=400)
-
-def paypal_cancel(request):
-    # The payment has been cancelled by the user
-    return redirect('cart')
+        return HttpResponseNotAllowed(['POST'])
