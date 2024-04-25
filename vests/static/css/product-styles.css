@@ -45,7 +45,7 @@ body {
 .logo {
     height: 25px;
     /* Adjust to your liking */
-    width: 30px;
+    /* width: 30px; */
     /* Keeps the aspect ratio */
     margin-left: 5px;
     margin-right: 10px;
@@ -284,4 +284,7 @@ img {
     .product-details {
         margin-top: 80px;
     }
+}
+.navbar-nav {
+    margin-right: 20px; /* Adjust this value as needed */
 }

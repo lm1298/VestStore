@@ -29,7 +29,7 @@ body {
 }
 .logo {
     height: 25px; /* Adjust to your liking */
-    width: 30px; /* Keeps the aspect ratio */
+    /* width: 30px; /* Keeps the aspect ratio */
     margin-left: 5px;
     margin-right: 10px;
 }
@@ -155,4 +155,7 @@ body {
     cursor: pointer;
     font-family: Arial, sans-serif;
     font-size: 16px;
+}
+.navbar-nav {
+    margin-right: 20px; /* Adjust this value as needed */
 }
