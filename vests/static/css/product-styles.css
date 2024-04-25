@@ -12,6 +12,7 @@ body {
 }
 
 .container1 {
+    position: static;
     display: flex;
     justify-content: space-between;
     width: 100%;
