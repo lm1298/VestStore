@@ -9,18 +9,6 @@ body {
 .element {
     overflow: auto;
 }
-.container1 {
-    position: static;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: auto;
-    background-color: #555555;
-    height: 60px;
-    align-items: center;
-    padding-right: 0;
-    margin-right: 0;
-}
 .left {
     display: flex;
     margin-left: 2%;
@@ -45,10 +33,9 @@ body {
 .navbar,
 .footer {
     background-color: #424041;
-    /* This is the gray color */
 }
 .logo {
-    height: 25px; /* Adjust to your liking */
+    height: 25px; 
     width: 30px; /* Keeps the aspect ratio */
     margin-left: 5px;
     margin-right: 10px;
@@ -94,4 +81,7 @@ body {
     cursor: pointer;
     font-family: Arial, sans-serif;
     font-size: 16px;
+}
+.custom-margin {
+    margin-top: 100px; /* Adjust this value as needed */
 }
