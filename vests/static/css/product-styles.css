@@ -1,87 +1,119 @@
 body {
-    font-family: Alegreya;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    /* background-color: #D3D3D3; */
-    background-image: url('../images/product-bg2.jpg');
-    background-size: cover;
-    color: #ffffff; /* Set text color to white */
-    text-align: center;
+    background-color: #D3D3D3;
+    color: black;
+    text-align: left;
 }
+
+.element {
+    overflow: auto;
+}
+
 .container1 {
     display: flex;
     justify-content: space-between;
-    width: 100%; 
-    margin: auto; 
-    background-color: #232f3e;
+    width: 100%;
+    margin: auto;
+    background-color: #555555;
     height: 60px;
     align-items: center;
-    
+    padding-right: 0;
+    margin-right: 0;
 }
 
 .left {
     display: flex;
-    margin-left: 7%;
+    margin-left: 2%;
 }
 
 .right {
     display: flex;
     margin-right: 12%;
-}   
+}
 
 .left a {
-    margin-right: 30%; 
+    margin-right: 30%;
 }
 
 .right a {
-    margin-left: 20%; 
+    margin-left: 20%;
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar,
+.footer {
+    background-color: #424041;
+    /* This is the gray color */
+}
+
+.logo {
+    height: 25px;
+    /* Adjust to your liking */
+    width: 30px;
+    /* Keeps the aspect ratio */
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
 .container {
-    background-color: #edecea; /* Set container background color to light black */
+    background-color: #edecea;
     padding: 20px;
     margin: 0 auto;
-    width: 40%; /* Adjust container width as needed */
-    text-align: center; /* Align text to left within container */
-    border-radius: 10px; /* Add rounded corners to container */
-    height: 350px;
-    font-family: Alegreya;
+    width: 40%;
+    text-align: center;
+    border-radius: 10px;
+    height: auto;
     color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 .container img {
-    float: left; /* Float image to the left */
-    margin-right: 20px; /* Add margin to the right of the image */
-    max-width: 70%; /* Set maximum width for the image */
-    height: 300px;
-    font-family: Alegreya;
+    max-width: 100%;
+    max-height: 200px;
+    width: auto;
+    margin-bottom: 20px;
 }
+
 .size-chart-link {
     font-size: 15px;
     cursor: pointer;
-    color: #007bff; /* Set link color to blue */
-    text-decoration: underline; /* Underline the link */
+    color: #007bff;
+    text-decoration: underline;
     margin-top: 10px;
-    font-family: Alegreya;
+
 }
 
 h1 {
-    color: white; /* Set heading color to white */
-    font-family: Alegreya;
+    color: white;
+
 }
+
 h2 {
-    color: #ccc; /* Set subheading color to light gray */
-    font-family: Alegreya;
+    color: #ccc;
+
 }
 
 img {
     max-width: 100%;
     height: auto;
-    font-family: Alegreya;
+
 }
+
 /* For tablets */
 @media (max-width: 1024px) {
     .container {
         width: 70%;
-        height: auto;
     }
 }
 
@@ -89,11 +121,6 @@ img {
 @media (max-width: 768px) {
     .container {
         width: 90%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 }
 
@@ -114,4 +141,150 @@ img {
         font-size: 12px;
         flex-direction: column;
     }
+}
+
+.prev-btn:disabled {
+    opacity: 0.5;
+    /*cursor: not-allowed; */
+}
+
+.next-btn:disabled {
+    opacity: 0.5;
+    /*cursor: not-allowed; */
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.current-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+.product-details {
+    margin-left: 10px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    max-width: 400px;
+    text-align: justify;
+    font-size: 15px;
+}
+
+.size-btn {
+    margin-right: 10px;
+    width: 50px;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    color: black;
+}
+
+.size-btn.active {
+    background-color: #8bc734;
+    border-color: #8bc734;
+}
+
+#quantity-selector {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    /*color: #17d71d;*/
+    color: black;
+}
+
+.quantity-display {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+
+.add-to-cart {
+    border-radius: 5px;
+    background-color: black;
+    border-color: black;
+    color: #8bc734;
+    width: 200px;
+    height: 35px;
+
+}
+
+.add-to-cart:hover {
+    background-color: #8bc734;
+    border-color: #8bc734;
+    color: white;
+}
+
+.add-to-cart-container {
+    display: flex;
+    justify-content: justify;
+    align-items: justify;
+}
+
+.unit-toggle {
+    border: 1px solid #ccc;
+    /* Default border color */
+    padding: 5px 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.unit-toggle.active {
+    border: 1px solid black;
+    /* Border color when button is active */
+}
+
+@media (max-width: 600px) {
+    .add-to-cart-container {
+        margin-bottom: 60px;
+    }
+}
+
+.cart-icon {
+    color: white;
+    font-size: 25px;
+}
+
+.donate-link {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
 }

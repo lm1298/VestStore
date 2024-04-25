@@ -34,6 +34,18 @@ body {
 .right a {
     margin-left: 20%;
 }
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar,
+.footer {
+    background-color: #424041;
+    /* This is the gray color */
+}
 .logo {
     height: 25px; /* Adjust to your liking */
     width: 30px; /* Keeps the aspect ratio */
