@@ -27,8 +27,14 @@
             {% else %}
                 <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-arrow-down cart-icon"></i></a>
             {% endif %}
-            <input type="submit" value="Donate" name="submit" class="donate-link"
-                title="PayPal - The safer, easier way to pay online!" />
+            <form action="https://www.sandbox.paypal.com/donate" method="post" target="_top">
+                <input type="hidden" name="business" value="28ZWXBBU5X66G" />
+                <input type="hidden" name="no_recurring" value="0" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                <input type="submit" value="Donate" name="submit" class="donate-link"
+                    title="PayPal - The safer, easier way to pay online!" />
+            </form>
         </div>
     </div>
     <div class="container mt-5">
