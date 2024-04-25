@@ -10,16 +10,19 @@ body {
     overflow: auto;
 }
 .container1 {
+    position: static;
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin: auto;
-    background-color: #555555;
+    color: #FFFFFF;
+    background-color: #424041; /* Change the color to gray */
     height: 60px;
     align-items: center;
     padding-right: 0;
     margin-right: 0;
 }
+
 .left {
     display: flex;
     margin-left: 2%;

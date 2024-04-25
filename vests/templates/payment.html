@@ -1,123 +1,145 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vest Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=AZPlVLeV8iUwn6RjA3Qk_0qGbjJkhloSxRaQO_EWYZilIXybr2uRENsrTIca2r6jxy-P4zsOHuahkvoR"></script>
+      <script src="https://www.paypal.com/sdk/js?client-id=AZPlVLeV8iUwn6RjA3Qk_0qGbjJkhloSxRaQO_EWYZilIXybr2uRENsrTIca2r6jxy-P4zsOHuahkvoR"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="{% static 'css/payment-styles.css' %}">
 </head>
+
 <body style="background-color: #FFFFFF;">
-    <div class="container1">
-        <div class="left">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="padding: 0rem 0rem;">
+        <a class="navbar-brand" href="#">
             <img src="{% static 'images/protector-vest.png' %}" alt="Logo" class="logo">
-            <a href="/" style="color:white;">Home</a>
-            <a href="{% url 'product' %}" style="color:white;">Products</a>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;" href="{% url 'product' %}">Products</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                <li class="nav-item cart-icon-container">
+                    {% if cart_empty %}
+                    <a class="nav-link" style="color:white;" href="{% url 'cart' %}"><i id="cart-icon"
+                            class="fas fa-cart-plus cart-icon"></i></a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'cart' %}"><i id="cart-icon"
+                            class="fas fa-cart-arrow-down cart-icon"></i></a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    <form action="https://www.sandbox.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="business" value="28ZWXBBU5X66G" />
+                        <input type="hidden" name="no_recurring" value="0" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <input type="submit" value="Donate" name="submit" class="btn btn-link nav-link"
+                            style="color:white;" title="PayPal - The safer, easier way to pay online!" />
+                    </form>
+                </li>
+            </ul>
         </div>
-        <div class="right">
-            {% if cart_empty %}
-            <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-plus cart-icon"></i></a>
-            {% else %}
-                <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-arrow-down cart-icon"></i></a>
-            {% endif %}
-            <form action="https://www.sandbox.paypal.com/donate" method="post" target="_top">
-                <input type="hidden" name="business" value="28ZWXBBU5X66G" />
-                <input type="hidden" name="no_recurring" value="0" />
-                <input type="hidden" name="currency_code" value="USD" />
-                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                <input type="submit" value="Donate" name="submit" class="donate-link"
-                    title="PayPal - The safer, easier way to pay online!" />
-            </form>
-        </div>
-    </div>
+    </nav>
+
 
     <div class="container-fluid" style="padding-left: 0;">
         <div class="row">
             <div class="col-lg-12">
-                <div class="footer" style="background-color: #424041; text-align: center; position: fixed; bottom: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 40px;">
-                    <p style="color: white; font-size: 15px; font-family: Arial, Helvetica, sans-serif; margin-top: 10px;">Contact us: <b>25mphvests@infinity.com</b></p>
+                <div class="footer"
+                    style="background-color: #424041; text-align: center; position: fixed; bottom: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 40px;">
+                    <p
+                        style="color: white; font-size: 15px; font-family: Arial, Helvetica, sans-serif; margin-top: 10px;">
+                        Contact us: <b>25mphvests@infinity.com</b></p>
                 </div>
             </div>
         </div>
     </div>
     <div class="container" style="margin-top: 20px;">
-    <h2 style="text-align: center;">Shipping Details</h2>
-    <div class = "form-container">
-    <form method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="full_name">Full Name:</label>
-            <input type="text" class="form-control" id="full_name" name="full_name" required>
+        <h2 style="text-align: center;">Shipping Details</h2>
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="full_name">Full Name:</label>
+                    <input type="text" class="form-control" id="full_name" name="full_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer_email">Email Address:</label>
+                    <input type="email" class="form-control" id="customer_email" name="customer_email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="zip_code">ZIP Code:</label>
+                    <input type="text" class="form-control" id="zip_code" name="zip_code" required>
+                </div>
+            </form>
+            <div id="paypal-button-container" class="paypal"></div>
         </div>
-        <div class="form-group">
-            <label for="customer_email">Email Address:</label>
-            <input type="email" class="form-control" id="customer_email" name="customer_email" required>
-        </div>
-        <div class="form-group">
-            <label for="address">Address:</label>
-            <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="city">City:</label>
-            <input type="text" class="form-control" id="city" name="city" required>
-        </div>
-        <div class="form-group">
-            <label for="zip_code">ZIP Code:</label>
-            <input type="text" class="form-control" id="zip_code" name="zip_code" required>
-        </div>
-    </form>
-    <div id="paypal-button-container" class="paypal"></div>
-    </div>
     </div>
     <script>
         paypal.Buttons({
-        createOrder: function(data, actions) {
-            // This function sets up the details of the transaction, including the amount and line item details.
-            var grandTotal = localStorage.getItem('grandTotal'); // Get the grand total from localStorage
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: grandTotal // Set the amount to the grand total
-                    }
-                }]
-            });
-        },
-        onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
-                // Make an AJAX request to create the order
-                $.ajax({
-                    type: 'POST',
-                    url: "{% url 'create_order' %}",
-                    data: {
-                        full_name: $('#full_name').val(),
-                        customer_email: $('#customer_email').val(),
-                        address: $('#address').val(),
-                        city: $('#city').val(),
-                        zip_code: $('#zip_code').val(),
-                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
-                    },
-                    success: function(response) {
-                        // Redirect to the confirmation page
-                        window.location.href = "/confirmation";
-                    },
-                    error: function(xhr, errmsg, err) {
-                        console.log(xhr.status + ": " + xhr.responseText);
-                        // Handle error
-                    }
+            createOrder: function (data, actions) {
+                // This function sets up the details of the transaction, including the amount and line item details.
+                var grandTotal = localStorage.getItem('grandTotal'); // Get the grand total from localStorage
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: grandTotal // Set the amount to the grand total
+                        }
+                    }]
                 });
-            });
-        }
-    }).render('#paypal-button-container');
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    // Make an AJAX request to create the order
+                    $.ajax({
+                        type: 'POST',
+                        url: "{% url 'create_order' %}",
+                        data: {
+                            full_name: $('#full_name').val(),
+                            customer_email: $('#customer_email').val(),
+                            address: $('#address').val(),
+                            city: $('#city').val(),
+                            zip_code: $('#zip_code').val(),
+                            csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                        },
+                        success: function (response) {
+                            // Redirect to the confirmation page
+                            window.location.href = "/confirmation";
+                        },
+                        error: function (xhr, errmsg, err) {
+                            console.log(xhr.status + ": " + xhr.responseText);
+                            // Handle error
+                        }
+                    });
+                });
+            }
+        }).render('#paypal-button-container');
     </script>
 
-</div>
+    </div>
 </body>
+
 </html>

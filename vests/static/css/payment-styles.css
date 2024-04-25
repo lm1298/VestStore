@@ -5,18 +5,17 @@ body {
     background-color: #D3D3D3;
     color: black;
     text-align: left;
-    overflow: auto;
 }
 .element {
     overflow: auto;
 }
 .container1 {
+    position: static;
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin: auto;
     background-color: #555555;
-    height: 60px;
     align-items: center;
     padding-right: 0;
     margin-right: 0;
@@ -34,6 +33,19 @@ body {
 }
 .right a {
     margin-left: 20%;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar,
+.footer {
+    background-color: #424041;
+    /* This is the gray color */
 }
 .logo {
     height: 25px; /* Adjust to your liking */
@@ -70,12 +82,28 @@ input[type="text"]{
     color: white;
     font-size: 25px;
 }
+.navbar {
+    padding: 0.25rem 0.1rem; /* Adjust this value to reduce/increase the height */
+} 
+.donate-link {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
 @media only screen and (max-width: 768px) {
     .form-container {
         flex-direction: column; /* Change flex-direction to column */
         height: auto; /* Remove fixed height */
     }
-    
+    .navbar-nav {
+        text-align: left;
+    }
+    .navbar-nav .nav-item {
+        flex-grow: 0.5;
+    }
     .paypal {
         margin: 20px auto; /* Adjust margin for center alignment */
         width: 100%; /* Make the button width 100% */
@@ -89,13 +117,21 @@ input[type="text"]{
         margin-left: 150px; 
         width:350px;
     }
-    
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-item {
+        flex-grow: 1;
+    }
 }
-.donate-link {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+
+.payment-navbar {
+    height: 60px; /* Adjust this value to match the navbar height in other pages */
+}
+.navbar-brand {
+    margin-left: 0.5rem; /* Adjust this value to move the logo closer to the Home link */
+}
+
+.cart-icon-container {
+    margin-left: 1rem; /* Adjust this value to move the cart icon to the right */
 }
