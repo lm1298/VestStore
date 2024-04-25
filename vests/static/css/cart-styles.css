@@ -76,7 +76,7 @@ body {
     text-align: center;
 }
 .grand-total {
-    color: #6AAD06; /* Change the color to your desired color */
+    color: black; /* Change the color to your desired color */
     font-weight: bold; /* Optionally make the text bold */
     text-align: left;
 }
