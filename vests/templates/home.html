@@ -10,8 +10,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
     <style>
         .mySlides {
@@ -111,19 +109,23 @@
                 <p>✅ Perfect for outdoor activities</p>
                 <p>✅ High visibility for safety</p>
                 <p>✅ Comfortable and stylish</p>
-                <a href="{% url 'product' %}" class="shop-now">Shop Now</a>
+                <a href="{% url 'product' %}" class="shop-now">
+                    <button class="shop-now">SHOP NOW</button>
+                </a>
             </div>
         </div>
         <div class="mySlides fade">
             <img src="{% static 'images/slideimage-1.jpeg' %}" class="slide-image desktop" style="width:100%">
             <img src="{% static 'images/homeslide-1.jpeg' %}" class="slide-image mobile" style="width:100%;">
-            <!-- Rest of the code -->
+
             <div class="slide-text">
                 <h2>Join the 25MPH Vests Community!</h2>
                 <p>🏃‍♂️ Be part of a community that values safety and style</p>
                 <p>🌎 Help spread the word about pedestrian safety</p>
                 <p>🎁 Donate for better cause</p>
-                <a href="{% url 'product' %}" class="shop-now">Shop Now</a>
+                <a href="{% url 'product' %}" class="shop-now-container">
+                    <button class="shop-now">SHOP NOW</button>
+                </a>
             </div>
         </div>
     </div>
@@ -140,10 +142,10 @@
             slideIndex++;
             if (slideIndex > slides.length) { slideIndex = 1 }
             slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
         }
     </script>
-    <section class="about-section" id="about-section" >
+    <section class="about-section" id="about-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
