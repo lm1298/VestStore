@@ -9,17 +9,6 @@ body {
 .element {
     overflow: auto;
 }
-.container1 {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: auto;
-    background-color: #555555;
-    height: 60px;
-    align-items: center;
-    padding-right: 0;
-    margin-right: 0;
-}
 .left {
     display: flex;
     margin-left: 2%;
@@ -34,9 +23,20 @@ body {
 .right a {
     margin-left: 20%;
 }
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar,
+.footer {
+    background-color: #424041;
+}
 .logo {
-    height: 25px; /* Adjust to your liking */
-    width: 30px; /* Keeps the aspect ratio */
+    height: 25px; 
+    /*width: 30px;  Keeps the aspect ratio */
     margin-left: 5px;
     margin-right: 10px;
 }
@@ -63,7 +63,7 @@ body {
     text-align: center;
 }
 .grand-total {
-    color: #6AAD06; /* Change the color to your desired color */
+    color: black; /* Change the color to your desired color */
     font-weight: bold; /* Optionally make the text bold */
     text-align: left;
 }
@@ -73,4 +73,18 @@ body {
 .cart-icon {
     color: white;
     font-size: 25px;
+}
+.donate-link {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+.custom-margin {
+    margin-top: 100px; /* Adjust this value as needed */
+}
+.navbar-nav {
+    margin-right: 20px; /* Adjust this value as needed */
 }

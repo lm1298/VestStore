@@ -1,6 +1,6 @@
 from django.urls import path
 from vests import views
-from .views import get_quantities, add_to_cart
+from .views import get_quantities, add_to_cart, create_order
 
 urlpatterns = [
     path('', views.home, name='home'),  # url for home page
@@ -12,6 +12,7 @@ urlpatterns = [
     path('confirmation/', views.confirmation, name='confirmation'),
     path('update_cart/', views.update_cart, name='update_cart'),
     path('checkout/', views.checkout, name='checkout'),
+    path('create_order/', create_order, name='create_order'),
 ]
 
 

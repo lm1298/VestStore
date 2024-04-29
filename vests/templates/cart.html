@@ -15,21 +15,46 @@
     <link rel="stylesheet" href="{% static 'css/cart-styles.css' %}">
 </head>
 <body style="background-color: #FFFFFF;">
-    <div class="container1">
-        <div class="left">
-            <img src="{% static 'images/protector-vest.png' %}" alt="Logo" class="logo">
-            <a href="/" style="color:white;">Home</a>
-            <a href="{% url 'product' %}" style="color:white;">Products</a>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white;" href="{% url 'product' %}">Products</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item cart-icon-container"> <!-- Add the class to this element -->
+                    {% if cart_empty %}
+                    <a class="nav-link" style="color:white;" href="{% url 'cart' %}"><i id="cart-icon"
+                            class="fas fa-cart-plus cart-icon"></i></a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'cart' %}"><i id="cart-icon"
+                            class="fas fa-cart-arrow-down cart-icon"></i></a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    <form action="https://www.sandbox.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="business" value="28ZWXBBU5X66G" />
+                        <input type="hidden" name="no_recurring" value="0" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <input type="submit" value="Donate" name="submit" class="btn btn-link nav-link"
+                            style="color:white;" title="PayPal - The safer, easier way to pay online!" />
+                    </form>
+                </li>
+            </ul>
         </div>
-        <div class="right">
-            {% if cart_empty %}
-            <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-plus cart-icon"></i></a>
-            {% else %}
-                <a href="{% url 'cart' %}" style="color:white;"><i id="cart-icon" class="fas fa-cart-arrow-down cart-icon"></i></a>
-            {% endif %}
-        </div>
-    </div>
-    <div class="container mt-5">
+    </nav>
+    <div class="container custom-margin">
         <h2 class="text-center mb-4">Your Cart</h2>
         <div class="table-responsive">
             <table class="table table-borderless" style="text-align: center; align-items: center;">
@@ -87,7 +112,7 @@
                 <br>
                 <div class="row mt-3">
                     <div class="col text-right">
-                        <button class="btn btn-primary" id="proceed-to-checkout" style="background-color: black; border-color: black;">Proceed to Checkout</button>
+                        <button class="btn btn-primary" id="proceed-to-checkout" style="background-color: #716d6c; border-color: #716d6c;">Proceed to Checkout</button>
                     </div>
                 </div>
             </div>
