@@ -27,10 +27,10 @@ body {
     width: 20%; /* Adjust this value as needed */
 }
 .logo {
-    height: 25px; /* Adjust to your liking */
-    /* width: 30px; /* Keeps the aspect ratio */
-    margin-left: 5px;
-    margin-right: 10px;
+    height: 30px; /* Adjust to your liking */
+    width: 30px; /* Keeps the aspect ratio */
+    margin-left: 8px;
+    margin-right: 8px;
 }
 .mySlides img {
     width: 100%;

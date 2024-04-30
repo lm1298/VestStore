@@ -43,12 +43,10 @@ body {
 }
 
 .logo {
-    height: 25px;
-    /* Adjust to your liking */
-    /* width: 30px;
-    /* Keeps the aspect ratio */
-    margin-left: 5px;
-    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 .cart-icon {
     color: white;
