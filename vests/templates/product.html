@@ -204,10 +204,20 @@
     document.addEventListener('DOMContentLoaded', function() {
         const addToCartButton = document.querySelector('.add-to-cart');
         var cartModal = $('#cart-modal');
+        var errorModal = $('#error-modal');
         
         addToCartButton.addEventListener('click', function() {
-            const selectedSize = document.querySelector('.size-btn.active').getAttribute('data-size');
+            const selectedSize1 = document.querySelector('.size-btn.active');
             const selectedQuantity = parseInt(document.getElementById('quantity-display').textContent);
+            if (!selectedSize1) {
+                // If no size is selected, display the error modal
+                $('#error-message').text('Please select a size.');
+                errorModal.modal('show');
+                return; 
+            }
+
+            // If a size is selected, proceed to add the product to the cart
+            const selectedSize = selectedSize1.getAttribute('data-size');
             
             // Send a request to add the product to the cart
             fetch('/add_to_cart/', {
