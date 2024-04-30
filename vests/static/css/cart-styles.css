@@ -35,10 +35,10 @@ body {
     background-color: #424041;
 }
 .logo {
-    height: 25px; 
-    /*width: 30px;  Keeps the aspect ratio */
-    margin-left: 5px;
-    margin-right: 10px;
+    height: 30px; 
+    width: 30px;  /*Keeps the aspect ratio */
+    margin-left: 8px;
+    margin-right: 8px;
 }
 .col-width {
     width: 20%; /* Adjust this value as needed */
@@ -87,4 +87,24 @@ body {
 }
 .navbar-nav {
     margin-right: 20px; /* Adjust this value as needed */
+}
+.donate-btn {
+    background-color: #6aad06;
+    border-color: #6aad06;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.donate-btn:hover {
+    background-color: #6aad06;
+    color: white;
+}
+/* For screens larger than or equal to 768px (typical desktop screens) */
+@media only screen and (min-width: 768px) {
+    .donate-btn {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
 }
