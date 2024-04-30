@@ -88,3 +88,17 @@ body {
 .navbar-nav {
     margin-right: 20px; /* Adjust this value as needed */
 }
+.donate-btn {
+    background-color: #6aad06;
+    border-color: #6aad06;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.donate-btn:hover {
+    background-color: #6aad06;
+    color: white;
+}
