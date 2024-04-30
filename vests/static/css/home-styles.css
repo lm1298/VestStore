@@ -119,6 +119,10 @@ body {
     .mySlides img {
         height: 720px;
     }
+    .donate-btn {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
 }
 .about-section h2 {
     color: green;
@@ -145,9 +149,8 @@ body {
     border-color: #6aad06;
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
     cursor: pointer;
+    font-size: 12px;
 }
 
 .donate-btn:hover {

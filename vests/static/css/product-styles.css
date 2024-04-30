@@ -284,6 +284,10 @@ img {
     .product-details {
         margin-top: 80px;
     }
+    .donate-btn {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
 }
 .navbar-nav {
     margin-right: 20px; /* Adjust this value as needed */
@@ -293,9 +297,8 @@ img {
     border-color: #6aad06;
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
     cursor: pointer;
+    font-size: 12px;
 }
 
 .donate-btn:hover {

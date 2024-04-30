@@ -51,12 +51,18 @@ body {
     border-color: #6aad06;
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
     cursor: pointer;
+    font-size: 12px;
 }
 
 .donate-btn:hover {
     background-color: #6aad06;
     color: white;
+}
+/* For screens larger than or equal to 768px (typical desktop screens) */
+@media only screen and (min-width: 768px) {
+    .donate-btn {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
 }
