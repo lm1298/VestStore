@@ -51,6 +51,7 @@ body {
 .cart-icon {
     color: white;
     font-size: 25px;
+    margin-right: 17px;
 }
 .donate-link {
     background: none;
