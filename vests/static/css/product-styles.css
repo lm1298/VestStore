@@ -43,8 +43,8 @@ body {
 }
 
 .logo {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     margin-left: 8px;
     margin-right: 8px;
 }
@@ -292,17 +292,17 @@ img {
     margin-right: 20px; /* Adjust this value as needed */
 }
 .donate-btn {
-    background-color: #6aad06;
-    border-color: #6aad06;
-    color: white;
+    background-color: #afdb51;
+    border-color: #afdb51;
+    color: black;
     border: none;
     cursor: pointer;
     font-size: 12px;
 }
 
 .donate-btn:hover {
-    background-color: #6aad06;
-    color: white;
+    background-color: #afdb51;
+    color: black;
 }
 
 
